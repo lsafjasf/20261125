@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音频取证 · 多证据复核</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="音频取证首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      <span>音频取证<small>多证据复核台</small></span>
+    </a>
+    <div class="top-status">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      原始录音只读 · 分析不降噪
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CONTEXT / PHASE / REPEAT</p>
+        <h1>底噪变化，不再等于<span class="nowrap">红色警报。</span></h1>
+        <p class="lede">
+          用前后上下文窗口判断突变，用相位连续性定位接缝，用重复样本指纹发现复制片段。
+          灵敏度调整只跨越阈值附近的区间，并保持修复前后使用同一时间网格。
+        </p>
+      </div>
+      <div class="ingest">
+        <input id="fileInput" type="file" accept=".wav,audio/wav,audio/x-wav" hidden>
+        <button id="uploadBtn" class="btn btn-primary" type="button">
+          <span class="btn-icon" aria-hidden="true">＋</span> 载入 WAV
+        </button>
+        <button id="demoBtn" class="btn btn-ghost" type="button">
+          <span class="btn-icon" aria-hidden="true">▶</span> 载入演示样本
+        </button>
+        <p id="ingestStatus" class="ingest-status" role="status">支持 PCM / IEEE-float WAV，最长 15 分钟</p>
+      </div>
+    </section>
+
+    <section id="dropzone" class="dropzone" aria-label="上传 WAV 文件">
+      <div class="drop-orbit" aria-hidden="true"></div>
+      <strong>拖入 WAV 文件</strong>
+      <span>或选择上方按钮；服务端仅保留原始字节用于回放与校验</span>
+    </section>
+
+    <section id="workspace" class="workspace" hidden>
+      <div class="meta-strip">
+        <div class="file-block">
+          <span class="label">当前样本</span>
+          <h2 id="fileName">—</h2>
+          <div class="hash-row">
+            <code id="fileHash">—</code>
+            <button id="copyHash" class="mini-btn" type="button">复制 SHA-256</button>
+          </div>
+        </div>
+        <dl class="meta-grid">
+          <div><dt>时长</dt><dd id="metaDuration">—</dd></div>
+          <div><dt>采样率</dt><dd id="metaRate">—</dd></div>
+          <div><dt>声道 / 位深</dt><dd id="metaFormat">—</dd></div>
+          <div><dt>帧网格</dt><dd id="metaGrid">—</dd></div>
+        </dl>
+      </div>
+
+      <div class="player-panel">
+        <div class="player-head">
+          <div>
+            <span class="label">原始音轨</span>
+            <strong>未降噪 · 字节级回放</strong>
+          </div>
+          <div class="player-actions">
+            <span id="audioGuard" class="guard-badge">SHA 待校验</span>
+            <a id="downloadOriginal" class="mini-btn" download>下载原始 WAV</a>
+          </div>
+        </div>
+        <audio id="audio" controls preload="metadata"></audio>
+      </div>
+
+      <div class="metric-row">
+        <article class="metric metric-red">
+          <span>当前风险区间</span>
+          <strong id="metricFlagged">—</strong>
+          <small id="metricFlaggedSub">—</small>
+        </article>
+        <article class="metric metric-amber">
+          <span>旧页 · 仅底噪</span>
+          <strong id="metricLegacy">—</strong>
+          <small id="metricLegacySub">同一网格对照</small>
+        </article>
+        <article class="metric metric-purple">
+          <span>重复片段</span>
+          <strong id="metricRepeats">—</strong>
+          <small id="metricRepeatsSub">精确样本指纹</small>
+        </article>
+        <article class="metric metric-cyan">
+          <span>统计对齐</span>
+          <strong id="metricAligned">—</strong>
+          <small id="metricAlignedSub">区间数与边界一致</small>
+        </article>
+      </div>
+
+      <section class="panel wave-panel">
+        <div class="panel-head">
+          <div>
+            <span class="label">证据时间轴</span>
+            <h3>波形与区间判定</h3>
+          </div>
+          <div class="legend">
+            <span><i class="swatch red"></i>风险区间</span>
+            <span><i class="swatch amber"></i>上下文异常</span>
+            <span><i class="swatch cyan"></i>相位</span>
+            <span><i class="swatch purple"></i>重复</span>
+          </div>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="waveCanvas" height="220" aria-label="音频波形与证据区间"></canvas>
+          <div id="waveEmpty" class="canvas-empty">载入样本后显示时间轴</div>
+        </div>
+        <div id="timeAxis" class="time-axis"></div>
+      </section>
+
+      <section class="sens-panel panel">
+        <div class="sens-copy">
+          <span class="label">灵敏度 · 区间增量重算</span>
+          <h3 id="sensTitle">0.55</h3>
+          <p id="sensExplain">移动滑块时，仅重算置信度落在新旧阈值之间的区间。</p>
+        </div>
+        <div class="sens-control">
+          <input id="sensRange" type="range" min="0" max="100" value="55" step="1" aria-label="检测灵敏度">
+          <div class="sens-scale"><span>保守</span><span>均衡</span><span>敏感</span></div>
+          <output id="revisionNote" class="revision-note">等待灵敏度调整</output>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <section class="panel findings-panel">
+          <div class="panel-head">
+            <div>
+              <span class="label">复核清单</span>
+              <h3>风险区间与证据</h3>
+            </div>
+            <label class="toggle">
+              <input id="showContext" type="checkbox">
+              <span>显示上下文异常</span>
+            </label>
+          </div>
+          <div class="table-wrap">
+            <table class="findings-table">
+              <thead>
+                <tr><th>时间</th><th>置信度</th><th>证据</th><th>判定</th></tr>
+              </thead>
+              <tbody id="findingsBody"></tbody>
+            </table>
+          </div>
+          <p id="findingsEmpty" class="table-empty" hidden>当前灵敏度下没有红色区间。</p>
+        </section>
+
+        <aside class="panel inspector-panel">
+          <div class="panel-head">
+            <div>
+              <span class="label">单区间透视</span>
+              <h3 id="inspectTitle">选择区间</h3>
+            </div>
+            <span id="inspectVerdict" class="verdict">—</span>
+          </div>
+          <div id="inspectBody" class="inspect-body">
+            <p class="muted">在时间轴或清单中选择一个区间。</p>
+          </div>
+        </aside>
+      </div>
+
+      <section class="panel compare-panel">
+        <div class="panel-head">
+          <div>
+            <span class="label">修复前后 · 同一网格</span>
+            <h3>统计对齐对照</h3>
+          </div>
+          <span id="alignBadge" class="guard-badge">—</span>
+        </div>
+        <div class="compare-grid">
+          <table class="compare-table">
+            <thead><tr><th>指标</th><th>旧页 · 仅底噪</th><th>当前 · 多证据</th><th>变化</th></tr></thead>
+            <tbody id="compareBody"></tbody>
+          </table>
+          <div class="align-detail">
+            <span class="label">对齐凭据</span>
+            <ul id="alignList"></ul>
+          </div>
+        </div>
+        <p id="compareNote" class="compare-note"></p>
+      </section>
+
+      <section class="panel repeat-panel">
+        <div class="panel-head">
+          <div>
+            <span class="label">重复样本</span>
+            <h3>精确复制区间</h3>
+          </div>
+          <span class="hint">窗口指纹 + 逐样本复核</span>
+        </div>
+        <div id="repeatList" class="repeat-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <span>取证分析在服务端完成，Go 标准库实现。</span>
+    <span>原始 WAV 不重写、不降噪、不做有损转码。</span>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
