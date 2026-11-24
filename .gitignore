@@ -1,0 +1,12 @@
+# 单二进制产物
+/batchproc
+/batchproc.exe
+
+# 本地运行与演示工作区
+/out/
+/.demo/
+/.demo-run1/
+
+# Go 测试 / 覆盖率产物
+*.test
+coverage.out

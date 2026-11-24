@@ -1,0 +1,17 @@
+{
+  "jobs": [
+    {
+      "id": "clip-ok",
+      "size_kb": 2048
+    },
+    {
+      "id": "clip-bad-input",
+      "size_kb": 1024,
+      "fail_stage": "encode"
+    },
+    {
+      "id": "clip-final",
+      "size_kb": 512
+    }
+  ]
+}
