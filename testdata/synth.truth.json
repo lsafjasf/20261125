@@ -1,0 +1,33 @@
+{
+  "sample_rate": 24000,
+  "watermark_spans": [
+    {
+      "start": 28800,
+      "end": 29824
+    },
+    {
+      "start": 81600,
+      "end": 82624
+    },
+    {
+      "start": 122400,
+      "end": 123424
+    },
+    {
+      "start": 189600,
+      "end": 190624
+    },
+    {
+      "start": 247200,
+      "end": 248224
+    }
+  ],
+  "echo_tap_lags": [
+    3000,
+    6000,
+    9000
+  ],
+  "ringing_block": 256,
+  "wm_band_lo_hz": 1200,
+  "wm_band_hi_hz": 3200
+}
