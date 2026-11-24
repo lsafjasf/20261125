@@ -1,0 +1,2543 @@
+{
+  "tool": "artifactdiag (Go stdlib only)",
+  "input": "testdata/clip_crf38.mp4",
+  "reference": "testdata/src.yuv",
+  "generated_at_utc": "2026-11-24T16:51:15Z",
+  "encoding_parameters": {
+    "width": 320,
+    "height": 256,
+    "codec": "h264",
+    "profile": "High",
+    "pix_fmt": "yuv420p",
+    "frame_rate": 25,
+    "duration_sec": 0.9600000000000001,
+    "nb_frames": 24,
+    "bit_rate_bps": 27950,
+    "has_b_frames": true,
+    "keyframes": [
+      0,
+      8,
+      16
+    ],
+    "color_tags": null
+  },
+  "detector_config": {
+    "TileSize": 16,
+    "DarkLumaThr": 80,
+    "EdgeMagThr": 42,
+    "BlockRatioThr": 1.6,
+    "BlockBoundaryThr": 2.5,
+    "BlockBoundaryNoRef": 4.5,
+    "BlockInteriorMax": 3,
+    "BlockRefSmooth": 1.2,
+    "RingingThr": 30,
+    "RingingEchoRatio": 0.08,
+    "BandingMaxLevels": 18,
+    "BandingMinGap": 2,
+    "BandingMinRun": 4,
+    "MotionMeanThr": 3,
+    "MotionPixThr": 12,
+    "MotionFracThr": 0.18,
+    "PersistFrames": 2
+  },
+  "summary": {
+    "frames_analyzed": 24,
+    "tiles_per_frame": 320,
+    "artifact_tile_hits": {
+      "banding_compression": 368,
+      "banding_tone_posterization": 146,
+      "blocking_artifact": 15,
+      "ringing_artifact": 7
+    },
+    "frames_with_label": {
+      "banding_compression": 24,
+      "banding_tone_posterization": 24,
+      "blocking_artifact": 14,
+      "ringing_artifact": 5
+    },
+    "dominant_artifact": "banding_compression"
+  },
+  "hot_frames": [
+    {
+      "rank": 1,
+      "frame_index": 14,
+      "pts_sec": 0.56,
+      "artifact_score": 488.42876193555446,
+      "is_keyframe": false,
+      "overlay_png": "frame_0014_overlay.png",
+      "zooms": [
+        {
+          "label": "banding_tone_posterization",
+          "region": {
+            "label": "banding_tone_posterization",
+            "x": 16,
+            "y": 144,
+            "w": 128,
+            "h": 16,
+            "tile_ids": [
+              181,
+              182,
+              183,
+              184,
+              185,
+              186,
+              187,
+              188
+            ],
+            "severity": 34.630014648437495
+          },
+          "zoom_png": "frame_0014_zoom_0_banding_tone_posterization.png"
+        },
+        {
+          "label": "banding_compression",
+          "region": {
+            "label": "banding_compression",
+            "x": 16,
+            "y": 176,
+            "w": 112,
+            "h": 16,
+            "tile_ids": [
+              221,
+              222,
+              223,
+              224,
+              225,
+              226,
+              227
+            ],
+            "severity": 6.876553083147321
+          },
+          "zoom_png": "frame_0014_zoom_1_banding_compression.png"
+        },
+        {
+          "label": "banding_compression",
+          "region": {
+            "label": "banding_compression",
+            "x": 16,
+            "y": 208,
+            "w": 112,
+            "h": 16,
+            "tile_ids": [
+              261,
+              262,
+              263,
+              264,
+              265,
+              266,
+              267
+            ],
+            "severity": 6.341181640625
+          },
+          "zoom_png": "frame_0014_zoom_2_banding_compression.png"
+        },
+        {
+          "label": "ringing_artifact",
+          "region": {
+            "label": "ringing_artifact",
+            "x": 272,
+            "y": 208,
+            "w": 16,
+            "h": 16,
+            "tile_ids": [
+              277
+            ],
+            "severity": 30.47455576559547
+          },
+          "zoom_png": "frame_0014_zoom_3_ringing_artifact.png"
+        }
+      ],
+      "label_counts": {
+        "banding_compression": 23,
+        "blocking_artifact": 1,
+        "clean": 233,
+        "motion": 19,
+        "real_edge": 13,
+        "ringing_artifact": 1,
+        "text_edge": 30
+      }
+    },
+    {
+      "rank": 2,
+      "frame_index": 15,
+      "pts_sec": 0.6,
+      "artifact_score": 496.9486390523731,
+      "is_keyframe": false,
+      "overlay_png": "frame_0015_overlay.png",
+      "zooms": [
+        {
+          "label": "banding_tone_posterization",
+          "region": {
+            "label": "banding_tone_posterization",
+            "x": 16,
+            "y": 144,
+            "w": 128,
+            "h": 16,
+            "tile_ids": [
+              181,
+              182,
+              183,
+              184,
+              185,
+              186,
+              187,
+              188
+            ],
+            "severity": 34.630014648437495
+          },
+          "zoom_png": "frame_0015_zoom_0_banding_tone_posterization.png"
+        },
+        {
+          "label": "banding_compression",
+          "region": {
+            "label": "banding_compression",
+            "x": 16,
+            "y": 176,
+            "w": 112,
+            "h": 16,
+            "tile_ids": [
+              221,
+              222,
+              223,
+              224,
+              225,
+              226,
+              227
+            ],
+            "severity": 6.876553083147321
+          },
+          "zoom_png": "frame_0015_zoom_1_banding_compression.png"
+        },
+        {
+          "label": "banding_compression",
+          "region": {
+            "label": "banding_compression",
+            "x": 16,
+            "y": 208,
+            "w": 112,
+            "h": 16,
+            "tile_ids": [
+              261,
+              262,
+              263,
+              264,
+              265,
+              266,
+              267
+            ],
+            "severity": 6.341181640625
+          },
+          "zoom_png": "frame_0015_zoom_2_banding_compression.png"
+        },
+        {
+          "label": "ringing_artifact",
+          "region": {
+            "label": "ringing_artifact",
+            "x": 272,
+            "y": 208,
+            "w": 16,
+            "h": 16,
+            "tile_ids": [
+              277
+            ],
+            "severity": 31.195546305931316
+          },
+          "zoom_png": "frame_0015_zoom_3_ringing_artifact.png"
+        }
+      ],
+      "label_counts": {
+        "banding_compression": 23,
+        "blocking_artifact": 1,
+        "clean": 236,
+        "motion": 16,
+        "real_edge": 13,
+        "ringing_artifact": 1,
+        "text_edge": 30
+      }
+    },
+    {
+      "rank": 3,
+      "frame_index": 17,
+      "pts_sec": 0.68,
+      "artifact_score": 475.2490457896706,
+      "is_keyframe": false,
+      "overlay_png": "frame_0017_overlay.png",
+      "zooms": [
+        {
+          "label": "banding_tone_posterization",
+          "region": {
+            "label": "banding_tone_posterization",
+            "x": 16,
+            "y": 144,
+            "w": 128,
+            "h": 16,
+            "tile_ids": [
+              181,
+              182,
+              183,
+              184,
+              185,
+              186,
+              187,
+              188
+            ],
+            "severity": 32.76331085205078
+          },
+          "zoom_png": "frame_0017_zoom_0_banding_tone_posterization.png"
+        },
+        {
+          "label": "banding_compression",
+          "region": {
+            "label": "banding_compression",
+            "x": 144,
+            "y": 192,
+            "w": 176,
+            "h": 16,
+            "tile_ids": [
+              249,
+              250,
+              251,
+              252,
+              253,
+              254,
+              255,
+              256,
+              257,
+              258,
+              259
+            ],
+            "severity": 7.171817737926137
+          },
+          "zoom_png": "frame_0017_zoom_1_banding_compression.png"
+        },
+        {
+          "label": "banding_compression",
+          "region": {
+            "label": "banding_compression",
+            "x": 16,
+            "y": 176,
+            "w": 112,
+            "h": 16,
+            "tile_ids": [
+              221,
+              222,
+              223,
+              224,
+              225,
+              226,
+              227
+            ],
+            "severity": 6.8964697265625
+          },
+          "zoom_png": "frame_0017_zoom_2_banding_compression.png"
+        },
+        {
+          "label": "blocking_artifact",
+          "region": {
+            "label": "blocking_artifact",
+            "x": 304,
+            "y": 96,
+            "w": 16,
+            "h": 16,
+            "tile_ids": [
+              139
+            ],
+            "severity": 6.776392045454545
+          },
+          "zoom_png": "frame_0017_zoom_3_blocking_artifact.png"
+        }
+      ],
+      "label_counts": {
+        "banding_compression": 26,
+        "blocking_artifact": 1,
+        "clean": 234,
+        "motion": 16,
+        "real_edge": 14,
+        "text_edge": 29
+      }
+    },
+    {
+      "rank": 4,
+      "frame_index": 18,
+      "pts_sec": 0.72,
+      "artifact_score": 474.4744111794686,
+      "is_keyframe": false,
+      "overlay_png": "frame_0018_overlay.png",
+      "zooms": [
+        {
+          "label": "banding_tone_posterization",
+          "region": {
+            "label": "banding_tone_posterization",
+            "x": 16,
+            "y": 144,
+            "w": 128,
+            "h": 16,
+            "tile_ids": [
+              181,
+              182,
+              183,
+              184,
+              185,
+              186,
+              187,
+              188
+            ],
+            "severity": 32.76331085205078
+          },
+          "zoom_png": "frame_0018_zoom_0_banding_tone_posterization.png"
+        },
+        {
+          "label": "banding_compression",
+          "region": {
+            "label": "banding_compression",
+            "x": 144,
+            "y": 192,
+            "w": 176,
+            "h": 16,
+            "tile_ids": [
+              249,
+              250,
+              251,
+              252,
+              253,
+              254,
+              255,
+              256,
+              257,
+              258,
+              259
+            ],
+            "severity": 7.1379252485795455
+          },
+          "zoom_png": "frame_0018_zoom_1_banding_compression.png"
+        },
+        {
+          "label": "banding_compression",
+          "region": {
+            "label": "banding_compression",
+            "x": 16,
+            "y": 176,
+            "w": 112,
+            "h": 16,
+            "tile_ids": [
+              221,
+              222,
+              223,
+              224,
+              225,
+              226,
+              227
+            ],
+            "severity": 6.8964697265625
+          },
+          "zoom_png": "frame_0018_zoom_2_banding_compression.png"
+        },
+        {
+          "label": "blocking_artifact",
+          "region": {
+            "label": "blocking_artifact",
+            "x": 304,
+            "y": 96,
+            "w": 16,
+            "h": 16,
+            "tile_ids": [
+              139
+            ],
+            "severity": 6.776392045454545
+          },
+          "zoom_png": "frame_0018_zoom_3_blocking_artifact.png"
+        }
+      ],
+      "label_counts": {
+        "banding_compression": 26,
+        "blocking_artifact": 1,
+        "clean": 234,
+        "motion": 16,
+        "real_edge": 14,
+        "text_edge": 29
+      }
+    },
+    {
+      "rank": 5,
+      "frame_index": 19,
+      "pts_sec": 0.76,
+      "artifact_score": 476.00618422024,
+      "is_keyframe": false,
+      "overlay_png": "frame_0019_overlay.png",
+      "zooms": [
+        {
+          "label": "banding_tone_posterization",
+          "region": {
+            "label": "banding_tone_posterization",
+            "x": 16,
+            "y": 144,
+            "w": 128,
+            "h": 16,
+            "tile_ids": [
+              181,
+              182,
+              183,
+              184,
+              185,
+              186,
+              187,
+              188
+            ],
+            "severity": 32.76331085205078
+          },
+          "zoom_png": "frame_0019_zoom_0_banding_tone_posterization.png"
+        },
+        {
+          "label": "banding_compression",
+          "region": {
+            "label": "banding_compression",
+            "x": 144,
+            "y": 192,
+            "w": 176,
+            "h": 16,
+            "tile_ids": [
+              249,
+              250,
+              251,
+              252,
+              253,
+              254,
+              255,
+              256,
+              257,
+              258,
+              259
+            ],
+            "severity": 7.201902521306818
+          },
+          "zoom_png": "frame_0019_zoom_1_banding_compression.png"
+        },
+        {
+          "label": "banding_compression",
+          "region": {
+            "label": "banding_compression",
+            "x": 16,
+            "y": 176,
+            "w": 112,
+            "h": 16,
+            "tile_ids": [
+              221,
+              222,
+              223,
+              224,
+              225,
+              226,
+              227
+            ],
+            "severity": 6.8964697265625
+          },
+          "zoom_png": "frame_0019_zoom_2_banding_compression.png"
+        },
+        {
+          "label": "blocking_artifact",
+          "region": {
+            "label": "blocking_artifact",
+            "x": 304,
+            "y": 96,
+            "w": 16,
+            "h": 16,
+            "tile_ids": [
+              139
+            ],
+            "severity": 6.776392045454545
+          },
+          "zoom_png": "frame_0019_zoom_3_blocking_artifact.png"
+        }
+      ],
+      "label_counts": {
+        "banding_compression": 26,
+        "blocking_artifact": 1,
+        "clean": 234,
+        "motion": 16,
+        "real_edge": 14,
+        "text_edge": 29
+      }
+    }
+  ],
+  "frames": [
+    {
+      "frame_index": 0,
+      "pts_sec": 0,
+      "artifact_score": 239.29070640203474,
+      "label_counts": {
+        "banding_compression": 21,
+        "blocking_artifact": 2,
+        "clean": 252,
+        "real_edge": 11,
+        "text_edge": 34
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 32,
+          "y": 144,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 19.988656529017856
+        },
+        {
+          "label": "banding_compression",
+          "x": 32,
+          "y": 176,
+          "w": 96,
+          "h": 32,
+          "tile_ids": [
+            222,
+            242,
+            243,
+            244,
+            224,
+            225,
+            226,
+            246,
+            247,
+            227,
+            245,
+            223
+          ],
+          "severity": 6.811560872395831
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 208,
+          "w": 16,
+          "h": 32,
+          "tile_ids": [
+            279,
+            299
+          ],
+          "severity": 8.164496227412533
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 144,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            181
+          ],
+          "severity": 8.553085937499999
+        },
+        {
+          "label": "banding_compression",
+          "x": 0,
+          "y": 176,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            220
+          ],
+          "severity": 6.7126171874999985
+        }
+      ]
+    },
+    {
+      "frame_index": 1,
+      "pts_sec": 0.04,
+      "artifact_score": 243.18581187223646,
+      "label_counts": {
+        "banding_compression": 19,
+        "clean": 248,
+        "motion": 12,
+        "real_edge": 10,
+        "text_edge": 31
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 48,
+          "y": 144,
+          "w": 96,
+          "h": 16,
+          "tile_ids": [
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 19.785512288411457
+        },
+        {
+          "label": "banding_compression",
+          "x": 32,
+          "y": 176,
+          "w": 96,
+          "h": 32,
+          "tile_ids": [
+            222,
+            242,
+            243,
+            244,
+            224,
+            225,
+            226,
+            246,
+            247,
+            227,
+            245,
+            223
+          ],
+          "severity": 6.811560872395831
+        },
+        {
+          "label": "banding_compression",
+          "x": 0,
+          "y": 176,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            220
+          ],
+          "severity": 6.7126171874999985
+        }
+      ]
+    },
+    {
+      "frame_index": 2,
+      "pts_sec": 0.08,
+      "artifact_score": 216.67878062223645,
+      "label_counts": {
+        "banding_compression": 18,
+        "clean": 244,
+        "motion": 16,
+        "real_edge": 11,
+        "text_edge": 31
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 64,
+          "y": 144,
+          "w": 80,
+          "h": 16,
+          "tile_ids": [
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 19.501489746093746
+        },
+        {
+          "label": "banding_compression",
+          "x": 32,
+          "y": 176,
+          "w": 96,
+          "h": 32,
+          "tile_ids": [
+            222,
+            242,
+            243,
+            244,
+            224,
+            225,
+            226,
+            246,
+            247,
+            227,
+            245,
+            223
+          ],
+          "severity": 6.811560872395831
+        },
+        {
+          "label": "banding_compression",
+          "x": 0,
+          "y": 176,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            220
+          ],
+          "severity": 6.7126171874999985
+        }
+      ]
+    },
+    {
+      "frame_index": 3,
+      "pts_sec": 0.12,
+      "artifact_score": 190.17174937223646,
+      "label_counts": {
+        "banding_compression": 17,
+        "clean": 245,
+        "motion": 16,
+        "real_edge": 11,
+        "text_edge": 31
+      },
+      "hotspots": [
+        {
+          "label": "banding_compression",
+          "x": 32,
+          "y": 176,
+          "w": 96,
+          "h": 32,
+          "tile_ids": [
+            222,
+            242,
+            243,
+            244,
+            224,
+            225,
+            226,
+            246,
+            247,
+            227,
+            245,
+            223
+          ],
+          "severity": 6.811560872395831
+        },
+        {
+          "label": "banding_tone_posterization",
+          "x": 80,
+          "y": 144,
+          "w": 64,
+          "h": 16,
+          "tile_ids": [
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 19.075455932617185
+        },
+        {
+          "label": "banding_compression",
+          "x": 0,
+          "y": 176,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            220
+          ],
+          "severity": 6.7126171874999985
+        }
+      ]
+    },
+    {
+      "frame_index": 4,
+      "pts_sec": 0.16,
+      "artifact_score": 165.52945398388732,
+      "label_counts": {
+        "banding_compression": 17,
+        "clean": 242,
+        "motion": 19,
+        "real_edge": 11,
+        "text_edge": 31
+      },
+      "hotspots": [
+        {
+          "label": "banding_compression",
+          "x": 32,
+          "y": 176,
+          "w": 96,
+          "h": 32,
+          "tile_ids": [
+            222,
+            242,
+            243,
+            244,
+            224,
+            225,
+            226,
+            246,
+            247,
+            227,
+            245,
+            223
+          ],
+          "severity": 6.7789302571614565
+        },
+        {
+          "label": "banding_tone_posterization",
+          "x": 96,
+          "y": 144,
+          "w": 48,
+          "h": 16,
+          "tile_ids": [
+            186,
+            187,
+            188
+          ],
+          "severity": 18.365399576822913
+        },
+        {
+          "label": "banding_compression",
+          "x": 0,
+          "y": 176,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            220
+          ],
+          "severity": 6.7126171874999985
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 144,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            181
+          ],
+          "severity": 4.56736328125
+        }
+      ]
+    },
+    {
+      "frame_index": 5,
+      "pts_sec": 0.2,
+      "artifact_score": 138.93282042676208,
+      "label_counts": {
+        "banding_compression": 16,
+        "clean": 242,
+        "motion": 20,
+        "real_edge": 11,
+        "text_edge": 31
+      },
+      "hotspots": [
+        {
+          "label": "banding_compression",
+          "x": 32,
+          "y": 176,
+          "w": 96,
+          "h": 32,
+          "tile_ids": [
+            222,
+            242,
+            243,
+            244,
+            224,
+            225,
+            226,
+            246,
+            247,
+            227,
+            245,
+            223
+          ],
+          "severity": 6.746361490885416
+        },
+        {
+          "label": "banding_tone_posterization",
+          "x": 112,
+          "y": 144,
+          "w": 32,
+          "h": 16,
+          "tile_ids": [
+            187,
+            188
+          ],
+          "severity": 16.945286865234372
+        },
+        {
+          "label": "banding_compression",
+          "x": 0,
+          "y": 176,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            220
+          ],
+          "severity": 6.7126171874999985
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 144,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            181
+          ],
+          "severity": 4.56736328125
+        }
+      ]
+    },
+    {
+      "frame_index": 6,
+      "pts_sec": 0.24,
+      "artifact_score": 157.66397110971155,
+      "label_counts": {
+        "banding_compression": 17,
+        "clean": 242,
+        "motion": 19,
+        "real_edge": 12,
+        "text_edge": 30
+      },
+      "hotspots": [
+        {
+          "label": "banding_compression",
+          "x": 32,
+          "y": 176,
+          "w": 96,
+          "h": 32,
+          "tile_ids": [
+            222,
+            242,
+            243,
+            244,
+            224,
+            225,
+            226,
+            246,
+            247,
+            227,
+            245,
+            223
+          ],
+          "severity": 6.713948364257813
+        },
+        {
+          "label": "banding_tone_posterization",
+          "x": 112,
+          "y": 144,
+          "w": 32,
+          "h": 16,
+          "tile_ids": [
+            187,
+            188
+          ],
+          "severity": 17.149652099609373
+        },
+        {
+          "label": "banding_tone_posterization",
+          "x": 32,
+          "y": 144,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            182
+          ],
+          "severity": 18.958242187499998
+        },
+        {
+          "label": "banding_compression",
+          "x": 0,
+          "y": 176,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            220
+          ],
+          "severity": 6.7126171874999985
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 144,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            181
+          ],
+          "severity": 4.56736328125
+        }
+      ]
+    },
+    {
+      "frame_index": 7,
+      "pts_sec": 0.28,
+      "artifact_score": 186.24341362647294,
+      "label_counts": {
+        "banding_compression": 17,
+        "clean": 245,
+        "motion": 16,
+        "real_edge": 12,
+        "ringing_artifact": 1,
+        "text_edge": 29
+      },
+      "hotspots": [
+        {
+          "label": "banding_compression",
+          "x": 32,
+          "y": 176,
+          "w": 96,
+          "h": 32,
+          "tile_ids": [
+            222,
+            242,
+            243,
+            244,
+            224,
+            225,
+            226,
+            246,
+            247,
+            227,
+            245,
+            223
+          ],
+          "severity": 6.756260172526041
+        },
+        {
+          "label": "banding_tone_posterization",
+          "x": 32,
+          "y": 144,
+          "w": 32,
+          "h": 16,
+          "tile_ids": [
+            182,
+            183
+          ],
+          "severity": 18.94555297851562
+        },
+        {
+          "label": "ringing_artifact",
+          "x": 288,
+          "y": 208,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            278
+          ],
+          "severity": 30.774117647058826
+        },
+        {
+          "label": "banding_tone_posterization",
+          "x": 128,
+          "y": 144,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            188
+          ],
+          "severity": 12.684948730468749
+        },
+        {
+          "label": "banding_compression",
+          "x": 0,
+          "y": 176,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            220
+          ],
+          "severity": 6.7126171874999985
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 144,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            181
+          ],
+          "severity": 4.56736328125
+        }
+      ]
+    },
+    {
+      "frame_index": 8,
+      "pts_sec": 0.32,
+      "artifact_score": 344.1070008213654,
+      "label_counts": {
+        "banding_compression": 19,
+        "blocking_artifact": 1,
+        "clean": 241,
+        "motion": 16,
+        "real_edge": 12,
+        "ringing_artifact": 2,
+        "text_edge": 29
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 64,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184
+          ],
+          "severity": 35.13576171875
+        },
+        {
+          "label": "ringing_artifact",
+          "x": 272,
+          "y": 208,
+          "w": 32,
+          "h": 16,
+          "tile_ids": [
+            277,
+            278
+          ],
+          "severity": 35.21455578512396
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.876553083147321
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 208,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267
+          ],
+          "severity": 6.341181640625
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            249
+          ],
+          "severity": 7.49556640625
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    },
+    {
+      "frame_index": 9,
+      "pts_sec": 0.36,
+      "artifact_score": 410.5801386786395,
+      "label_counts": {
+        "banding_compression": 20,
+        "blocking_artifact": 1,
+        "clean": 240,
+        "motion": 16,
+        "real_edge": 12,
+        "ringing_artifact": 2,
+        "text_edge": 29
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 80,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185
+          ],
+          "severity": 35.13576171875
+        },
+        {
+          "label": "ringing_artifact",
+          "x": 272,
+          "y": 208,
+          "w": 32,
+          "h": 16,
+          "tile_ids": [
+            277,
+            278
+          ],
+          "severity": 35.24460347222221
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.876553083147321
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 208,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267
+          ],
+          "severity": 6.341181640625
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            249
+          ],
+          "severity": 7.49556640625
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    },
+    {
+      "frame_index": 10,
+      "pts_sec": 0.4,
+      "artifact_score": 366.3883321465215,
+      "label_counts": {
+        "banding_compression": 21,
+        "blocking_artifact": 1,
+        "clean": 227,
+        "motion": 31,
+        "real_edge": 11,
+        "text_edge": 29
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 96,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186
+          ],
+          "severity": 35.13576171875
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.876553083147321
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 208,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267
+          ],
+          "severity": 6.341181640625
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            249
+          ],
+          "severity": 7.49556640625
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    },
+    {
+      "frame_index": 11,
+      "pts_sec": 0.44,
+      "artifact_score": 409.80594445120903,
+      "label_counts": {
+        "banding_compression": 22,
+        "blocking_artifact": 1,
+        "clean": 239,
+        "motion": 16,
+        "real_edge": 11,
+        "text_edge": 31
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187
+          ],
+          "severity": 35.064034598214285
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.876553083147321
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 208,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267
+          ],
+          "severity": 6.341181640625
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            249
+          ],
+          "severity": 7.49556640625
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    },
+    {
+      "frame_index": 12,
+      "pts_sec": 0.48,
+      "artifact_score": 450.056237419959,
+      "label_counts": {
+        "banding_compression": 23,
+        "blocking_artifact": 1,
+        "clean": 233,
+        "motion": 19,
+        "real_edge": 13,
+        "text_edge": 31
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 128,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 34.630014648437495
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.876553083147321
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 208,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267
+          ],
+          "severity": 6.341181640625
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            249
+          ],
+          "severity": 7.49556640625
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    },
+    {
+      "frame_index": 13,
+      "pts_sec": 0.52,
+      "artifact_score": 457.954206169959,
+      "label_counts": {
+        "banding_compression": 23,
+        "blocking_artifact": 1,
+        "clean": 232,
+        "motion": 20,
+        "real_edge": 13,
+        "text_edge": 31
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 128,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 34.630014648437495
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.876553083147321
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 208,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267
+          ],
+          "severity": 6.341181640625
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            249
+          ],
+          "severity": 7.49556640625
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    },
+    {
+      "frame_index": 14,
+      "pts_sec": 0.56,
+      "artifact_score": 488.42876193555446,
+      "label_counts": {
+        "banding_compression": 23,
+        "blocking_artifact": 1,
+        "clean": 233,
+        "motion": 19,
+        "real_edge": 13,
+        "ringing_artifact": 1,
+        "text_edge": 30
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 128,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 34.630014648437495
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.876553083147321
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 208,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267
+          ],
+          "severity": 6.341181640625
+        },
+        {
+          "label": "ringing_artifact",
+          "x": 272,
+          "y": 208,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            277
+          ],
+          "severity": 30.47455576559547
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            249
+          ],
+          "severity": 7.49556640625
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    },
+    {
+      "frame_index": 15,
+      "pts_sec": 0.6,
+      "artifact_score": 496.9486390523731,
+      "label_counts": {
+        "banding_compression": 23,
+        "blocking_artifact": 1,
+        "clean": 236,
+        "motion": 16,
+        "real_edge": 13,
+        "ringing_artifact": 1,
+        "text_edge": 30
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 128,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 34.630014648437495
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.876553083147321
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 208,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267
+          ],
+          "severity": 6.341181640625
+        },
+        {
+          "label": "ringing_artifact",
+          "x": 272,
+          "y": 208,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            277
+          ],
+          "severity": 31.195546305931316
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            249
+          ],
+          "severity": 7.49556640625
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    },
+    {
+      "frame_index": 16,
+      "pts_sec": 0.64,
+      "artifact_score": 464.83884615087953,
+      "label_counts": {
+        "banding_compression": 26,
+        "blocking_artifact": 1,
+        "clean": 234,
+        "motion": 16,
+        "real_edge": 14,
+        "text_edge": 29
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 128,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 32.76331085205078
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 176,
+          "h": 16,
+          "tile_ids": [
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259
+          ],
+          "severity": 7.45437189275568
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.8964697265625
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    },
+    {
+      "frame_index": 17,
+      "pts_sec": 0.68,
+      "artifact_score": 475.2490457896706,
+      "label_counts": {
+        "banding_compression": 26,
+        "blocking_artifact": 1,
+        "clean": 234,
+        "motion": 16,
+        "real_edge": 14,
+        "text_edge": 29
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 128,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 32.76331085205078
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 176,
+          "h": 16,
+          "tile_ids": [
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259
+          ],
+          "severity": 7.171817737926137
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.8964697265625
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    },
+    {
+      "frame_index": 18,
+      "pts_sec": 0.72,
+      "artifact_score": 474.4744111794686,
+      "label_counts": {
+        "banding_compression": 26,
+        "blocking_artifact": 1,
+        "clean": 234,
+        "motion": 16,
+        "real_edge": 14,
+        "text_edge": 29
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 128,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 32.76331085205078
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 176,
+          "h": 16,
+          "tile_ids": [
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259
+          ],
+          "severity": 7.1379252485795455
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.8964697265625
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    },
+    {
+      "frame_index": 19,
+      "pts_sec": 0.76,
+      "artifact_score": 476.00618422024,
+      "label_counts": {
+        "banding_compression": 26,
+        "blocking_artifact": 1,
+        "clean": 234,
+        "motion": 16,
+        "real_edge": 14,
+        "text_edge": 29
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 128,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 32.76331085205078
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 176,
+          "h": 16,
+          "tile_ids": [
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259
+          ],
+          "severity": 7.201902521306818
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.8964697265625
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    },
+    {
+      "frame_index": 20,
+      "pts_sec": 0.8,
+      "artifact_score": 435.3818755340388,
+      "label_counts": {
+        "banding_compression": 22,
+        "clean": 225,
+        "motion": 34,
+        "real_edge": 10,
+        "text_edge": 29
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 128,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 32.76331085205078
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255
+          ],
+          "severity": 7.138056640625001
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.8964697265625
+        }
+      ]
+    },
+    {
+      "frame_index": 21,
+      "pts_sec": 0.84,
+      "artifact_score": 467.2484057191088,
+      "label_counts": {
+        "banding_compression": 26,
+        "clean": 237,
+        "motion": 16,
+        "real_edge": 10,
+        "text_edge": 31
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 16,
+          "y": 144,
+          "w": 128,
+          "h": 16,
+          "tile_ids": [
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 32.76331085205078
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 128,
+          "h": 32,
+          "tile_ids": [
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            276
+          ],
+          "severity": 7.1870312499999995
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.8964697265625
+        },
+        {
+          "label": "banding_compression",
+          "x": 288,
+          "y": 192,
+          "w": 32,
+          "h": 16,
+          "tile_ids": [
+            258,
+            259
+          ],
+          "severity": 7.3135095214843755
+        }
+      ]
+    },
+    {
+      "frame_index": 22,
+      "pts_sec": 0.88,
+      "artifact_score": 381.202090472956,
+      "label_counts": {
+        "banding_compression": 24,
+        "clean": 230,
+        "motion": 24,
+        "real_edge": 11,
+        "text_edge": 31
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 48,
+          "y": 144,
+          "w": 96,
+          "h": 16,
+          "tile_ids": [
+            183,
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 31.97249389648437
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 128,
+          "h": 32,
+          "tile_ids": [
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            276
+          ],
+          "severity": 7.1870312499999995
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.8964697265625
+        },
+        {
+          "label": "banding_compression",
+          "x": 288,
+          "y": 192,
+          "w": 32,
+          "h": 16,
+          "tile_ids": [
+            258,
+            259
+          ],
+          "severity": 7.3135095214843755
+        }
+      ]
+    },
+    {
+      "frame_index": 23,
+      "pts_sec": 0.92,
+      "artifact_score": 334.05687921512055,
+      "label_counts": {
+        "banding_compression": 22,
+        "blocking_artifact": 1,
+        "clean": 239,
+        "motion": 16,
+        "real_edge": 11,
+        "text_edge": 31
+      },
+      "hotspots": [
+        {
+          "label": "banding_tone_posterization",
+          "x": 64,
+          "y": 144,
+          "w": 80,
+          "h": 16,
+          "tile_ids": [
+            184,
+            185,
+            186,
+            187,
+            188
+          ],
+          "severity": 31.339840332031248
+        },
+        {
+          "label": "banding_compression",
+          "x": 144,
+          "y": 192,
+          "w": 128,
+          "h": 16,
+          "tile_ids": [
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256
+          ],
+          "severity": 7.1385498046875
+        },
+        {
+          "label": "banding_compression",
+          "x": 16,
+          "y": 176,
+          "w": 112,
+          "h": 16,
+          "tile_ids": [
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227
+          ],
+          "severity": 6.8964697265625
+        },
+        {
+          "label": "banding_compression",
+          "x": 288,
+          "y": 192,
+          "w": 32,
+          "h": 16,
+          "tile_ids": [
+            258,
+            259
+          ],
+          "severity": 7.3135095214843755
+        },
+        {
+          "label": "blocking_artifact",
+          "x": 304,
+          "y": 96,
+          "w": 16,
+          "h": 16,
+          "tile_ids": [
+            139
+          ],
+          "severity": 6.776392045454545
+        }
+      ]
+    }
+  ]
+}
