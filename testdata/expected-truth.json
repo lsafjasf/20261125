@@ -1,0 +1,47 @@
+{
+  "seed": 42,
+  "exposure": 1.3,
+  "white_balance": [
+    1.28,
+    1,
+    0.78125
+  ],
+  "gamma": [
+    0.9,
+    1.03,
+    1.12
+  ],
+  "effective_gain": [
+    1.6640000000000001,
+    1.3,
+    1.015625
+  ],
+  "read_noise_sigma": 0.0032,
+  "shot_noise_coefficient": 0.0075,
+  "flare_by_patch": {
+    "neutral-35": [
+      0.11,
+      0.075,
+      0.045
+    ],
+    "purple": [
+      0.075,
+      0.055,
+      0.12
+    ]
+  },
+  "reflection_patches": [
+    "neutral-35",
+    "purple"
+  ],
+  "highlight_patches": [
+    "orange",
+    "orange-yellow",
+    "white",
+    "yellow"
+  ],
+  "shadow_patches": [
+    "neutral-35",
+    "black"
+  ]
+}

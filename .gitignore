@@ -1,0 +1,5 @@
+/colorcal
+/bin/
+/colorcal-demo/
+*.test
+*.out

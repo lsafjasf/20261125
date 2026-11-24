@@ -1,0 +1,727 @@
+{
+  "schema_version": "colorcal/v1",
+  "value_space": "normalized_linear_reference_and_camera_output",
+  "saturation_level": 1,
+  "patches": [
+    {
+      "id": "dark-skin",
+      "name": "Dark Skin",
+      "group": "skin",
+      "reference_linear_rgb": [
+        0.17144110073282262,
+        0.08437621154414882,
+        0.05780543019106723
+      ],
+      "measured_rgb": [
+        0.33168517817077137,
+        0.10315344971260386,
+        0.040023706628592844
+      ],
+      "sigma_rgb": [
+        0.005332101811609496,
+        0.0040017729115324726,
+        0.0035482397068157547
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "light-skin",
+      "name": "Light Skin",
+      "group": "skin",
+      "reference_linear_rgb": [
+        0.5394794890121071,
+        0.3049873140698863,
+        0.2232279573168085
+      ],
+      "measured_rgb": [
+        0.9171734028801648,
+        0.38637673558566527,
+        0.19524838895716665
+      ],
+      "sigma_rgb": [
+        0.007828359206418884,
+        0.00565081771906393,
+        0.004573008398682048
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "blue-sky",
+      "name": "Blue Sky",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.12213877222960186,
+        0.1946178304415758,
+        0.3371636150483303
+      ],
+      "measured_rgb": [
+        0.23530211730599482,
+        0.24586162429092936,
+        0.3092698254498714
+      ],
+      "sigma_rgb": [
+        0.004862808914919642,
+        0.004888413898637882,
+        0.005213190148844836
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "foliage",
+      "name": "Foliage",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.09530746663096469,
+        0.14995978981060853,
+        0.0561284900496001
+      ],
+      "measured_rgb": [
+        0.18683694481702437,
+        0.17962057614378574,
+        0.043516149454928266
+      ],
+      "sigma_rgb": [
+        0.004578694476395582,
+        0.004547626576604772,
+        0.003537482773671423
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "blue-flower",
+      "name": "Blue Flower",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.23455058216100524,
+        0.21586050011389923,
+        0.4396571738409188
+      ],
+      "measured_rgb": [
+        0.43619456604926526,
+        0.27186493790717225,
+        0.4016184139632664
+      ],
+      "sigma_rgb": [
+        0.005861721770193706,
+        0.0050432494453973185,
+        0.0057481204689087215
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "bluish-green",
+      "name": "Bluish Green",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.13563332965520566,
+        0.5088813208549338,
+        0.40197777983219574
+      ],
+      "measured_rgb": [
+        0.27085761179809853,
+        0.6508192422782315,
+        0.35888452255099934
+      ],
+      "sigma_rgb": [
+        0.0049972962453703005,
+        0.006855183497661858,
+        0.005555526273173287
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.6724431569576875,
+        0.20863687014525575,
+        0.02518685962736163
+      ],
+      "measured_rgb": [
+        1,
+        0.2604975578620964,
+        0.017928446496240282
+      ],
+      "sigma_rgb": [
+        0.008513358350017203,
+        0.004991082769955327,
+        0.003341673925376373
+      ],
+      "clip_rgb": [
+        true,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "purplish-blue",
+      "name": "Purplish Blue",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.08021982031446832,
+        0.10461648409110419,
+        0.3813260114325301
+      ],
+      "measured_rgb": [
+        0.16705201564278696,
+        0.12966465091078835,
+        0.3490763861186932
+      ],
+      "sigma_rgb": [
+        0.004407223922289217,
+        0.004176797306086574,
+        0.0054480161459512485
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "moderate-red",
+      "name": "Moderate Red",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.5332764040105052,
+        0.10224173308810132,
+        0.12477181756095049
+      ],
+      "measured_rgb": [
+        0.8921231336689187,
+        0.12578151241932034,
+        0.09810062095152276
+      ],
+      "sigma_rgb": [
+        0.007794529159214675,
+        0.004156587737574369,
+        0.003975307329667913
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "purple",
+      "name": "Purple",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.1119324278369056,
+        0.045186204385675534,
+        0.14995978981060853
+      ],
+      "measured_rgb": [
+        0.29767277225872246,
+        0.11405386024512414,
+        0.24508118912304205
+      ],
+      "sigma_rgb": [
+        0.005181989676835726,
+        0.004045815230039519,
+        0.00488111367151772
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "yellow-green",
+      "name": "Yellow Green",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.3371636150483303,
+        0.5028864580325687,
+        0.05126945837404323
+      ],
+      "measured_rgb": [
+        0.5995027108644244,
+        0.6415550944999882,
+        0.034893363975622024
+      ],
+      "sigma_rgb": [
+        0.006608798528829464,
+        0.006822584302421539,
+        0.003506351074237013
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "orange-yellow",
+      "name": "Orange Yellow",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.7454042095403874,
+        0.3712376804741491,
+        0.019382360956935726
+      ],
+      "measured_rgb": [
+        1,
+        0.47381111187826713,
+        0.012126470418023888
+      ],
+      "sigma_rgb": [
+        0.008861325588547882,
+        0.006066288867412656,
+        0.003306225860595761
+      ],
+      "clip_rgb": [
+        true,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "blue",
+      "name": "Blue",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.03954623527673284,
+        0.046665086336880095,
+        0.3049873140698863
+      ],
+      "measured_rgb": [
+        0.08524800534780151,
+        0.05493158300331637,
+        0.27129108512050837
+      ],
+      "sigma_rgb": [
+        0.003885755047574788,
+        0.003657489236694489,
+        0.005037627059506108
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "green",
+      "name": "Green",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.06124605423161761,
+        0.2961382707983211,
+        0.06662593864377289
+      ],
+      "measured_rgb": [
+        0.12370424907060923,
+        0.3714353419469524,
+        0.04572081113756515
+      ],
+      "sigma_rgb": [
+        0.0041765163324076334,
+        0.005593189632173481,
+        0.0036048779422089496
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "red",
+      "name": "Red",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.4286904966139067,
+        0.03688945040110004,
+        0.045186204385675534
+      ],
+      "measured_rgb": [
+        0.7435280212866736,
+        0.04449869243859342,
+        0.024096664298554386
+      ],
+      "sigma_rgb": [
+        0.007193330460196364,
+        0.0035640703523723213,
+        0.003467490330121684
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.7991027380144091,
+        0.5711248294648732,
+        0.013702083047289688
+      ],
+      "measured_rgb": [
+        1,
+        0.7346215227228546,
+        0.002651785191066328
+      ],
+      "sigma_rgb": [
+        0.009106850217521098,
+        0.007185545951112224,
+        0.0032724100551609304
+      ],
+      "clip_rgb": [
+        true,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "magenta",
+      "name": "Magenta",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.4969329950608704,
+        0.09305896284668744,
+        0.3005437944157765
+      ],
+      "measured_rgb": [
+        0.8359341074358543,
+        0.1105712659819219,
+        0.2673227452639339
+      ],
+      "sigma_rgb": [
+        0.007592462184644369,
+        0.0040776366752894476,
+        0.005013071764944105
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "cyan",
+      "name": "Cyan",
+      "group": "chroma",
+      "reference_linear_rgb": [
+        0.0024282158683907,
+        0.23455058216100524,
+        0.3564001441459435
+      ],
+      "measured_rgb": [
+        0.009364968643361601,
+        0.2927986844971436,
+        0.3133331672125449
+      ],
+      "sigma_rgb": [
+        0.003261040295937742,
+        0.005176015393561721,
+        0.005316323993035234
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "group": "gray-highlight",
+      "reference_linear_rgb": [
+        0.8962693533742664,
+        0.8962693533742664,
+        0.8879231178819663
+      ],
+      "measured_rgb": [
+        1,
+        1,
+        0.8987841120528094
+      ],
+      "sigma_rgb": [
+        0.00953119839207241,
+        0.008722437663057851,
+        0.007767931576242278
+      ],
+      "clip_rgb": [
+        true,
+        true,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "neutral-80",
+      "name": "Neutral 80",
+      "group": "gray",
+      "reference_linear_rgb": [
+        0.5775804404296505,
+        0.5775804404296505,
+        0.5775804404296505
+      ],
+      "measured_rgb": [
+        0.9731815177532024,
+        0.7449437041160092,
+        0.5552843645060838
+      ],
+      "sigma_rgb": [
+        0.00803221569526591,
+        0.007219006593529166,
+        0.006417994879535232
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "neutral-65",
+      "name": "Neutral 65",
+      "group": "gray",
+      "reference_linear_rgb": [
+        0.35153259950043936,
+        0.35153259950043936,
+        0.35153259950043936
+      ],
+      "measured_rgb": [
+        0.6162260149708505,
+        0.44043195093346016,
+        0.3193574697683881
+      ],
+      "sigma_rgb": [
+        0.006704922860402914,
+        0.005945499277406076,
+        0.005290353056253955
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "neutral-50",
+      "name": "Neutral 50",
+      "group": "gray",
+      "reference_linear_rgb": [
+        0.1946178304415758,
+        0.1946178304415758,
+        0.19120168274079136
+      ],
+      "measured_rgb": [
+        0.3578223022961081,
+        0.2441865803138829,
+        0.16160542597574493
+      ],
+      "sigma_rgb": [
+        0.005534470110030129,
+        0.004888413898637882,
+        0.004383256466538944
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "neutral-35",
+      "name": "Neutral 35",
+      "group": "gray-shadow",
+      "reference_linear_rgb": [
+        0.09084171118340768,
+        0.09084171118340768,
+        0.09084171118340768
+      ],
+      "measured_rgb": [
+        0.29819895023866066,
+        0.177986354389121,
+        0.11311413981845134
+      ],
+      "sigma_rgb": [
+        0.005167069567680486,
+        0.004548536066486661,
+        0.004082910999337919
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "group": "gray-shadow",
+      "reference_linear_rgb": [
+        0.03433980680868216,
+        0.03433980680868216,
+        0.03433980680868216
+      ],
+      "measured_rgb": [
+        0.0745484682416115,
+        0.043313284664453715,
+        0.0208985343328415
+      ],
+      "sigma_rgb": [
+        0.0038104274825473006,
+        0.003539417031996164,
+        0.003398744976514821
+      ],
+      "clip_rgb": [
+        false,
+        false,
+        false
+      ],
+      "mask_rgb": [
+        false,
+        false,
+        false
+      ]
+    }
+  ]
+}
