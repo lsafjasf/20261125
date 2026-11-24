@@ -1,0 +1,816 @@
+{
+  "schema_version": "editlist-audit/v1",
+  "read_only": true,
+  "inputs": [
+    {
+      "path": "testdata/cases/01_empty_edit_delay.mov",
+      "file_size": 96589,
+      "movie": {
+        "timescale": 1000,
+        "duration": 1250,
+        "duration_seconds_exact": "5/4"
+      },
+      "tracks": [
+        {
+          "index": 0,
+          "track_id": 1,
+          "handler": "soun",
+          "is_audio": true,
+          "tkhd": {
+            "version": 0,
+            "track_id": 1,
+            "duration_movie_units": 1250
+          },
+          "mdhd": {
+            "version": 0,
+            "timescale": 48000,
+            "duration_media_units": 48000
+          },
+          "elst": {
+            "box_offset": 244,
+            "version": 0,
+            "entry_count": 2
+          },
+          "edits": [
+            {
+              "index": 0,
+              "kind": "empty_edit",
+              "empty": true,
+              "dwell": false,
+              "negative_media_time": false,
+              "segment_duration_movie_units": 250,
+              "composition_interval": {
+                "timescale": 1000,
+                "start_units_exact": "0",
+                "end_units_exact": "250",
+                "duration_units_exact": "250",
+                "start_seconds_exact": "0",
+                "end_seconds_exact": "1/4",
+                "duration_seconds_exact": "1/4",
+                "start_seconds": 0,
+                "end_seconds": 0.25,
+                "duration_seconds": 0.25
+              },
+              "media_rate_raw_hex": "0x00010000",
+              "media_rate_fixed": "1",
+              "media_rate_rational": "1",
+              "warnings": [
+                "media_time=-1: standard empty edit; composition interval is reserved and has no source media interval"
+              ]
+            },
+            {
+              "index": 1,
+              "kind": "media_playback",
+              "empty": false,
+              "dwell": false,
+              "negative_media_time": false,
+              "segment_duration_movie_units": 1000,
+              "composition_interval": {
+                "timescale": 1000,
+                "start_units_exact": "250",
+                "end_units_exact": "1250",
+                "duration_units_exact": "1000",
+                "start_seconds_exact": "1/4",
+                "end_seconds_exact": "5/4",
+                "duration_seconds_exact": "1",
+                "start_seconds": 0.25,
+                "end_seconds": 1.25,
+                "duration_seconds": 1
+              },
+              "media_interval": {
+                "timescale": 48000,
+                "start_units_exact": "0",
+                "end_units_exact": "48000",
+                "duration_units_exact": "48000",
+                "start_seconds_exact": "0",
+                "end_seconds_exact": "1",
+                "duration_seconds_exact": "1",
+                "start_seconds": 0,
+                "end_seconds": 1,
+                "duration_seconds": 1
+              },
+              "media_duration_rounded": {
+                "floor": "48000",
+                "nearest": "48000",
+                "ceil": "48000"
+              },
+              "media_zero_on_composition": {
+                "timescale": 1000,
+                "units_exact": "250",
+                "seconds_exact": "1/4",
+                "seconds": 0.25
+              },
+              "media_rate_raw_hex": "0x00010000",
+              "media_rate_fixed": "1",
+              "media_rate_rational": "1"
+            }
+          ],
+          "audio_start": {
+            "edit_index": 1,
+            "kind": "media_playback",
+            "source_media_time_units": 0,
+            "source_media_time_seconds_exact": "0",
+            "composition_start_movie_units": "250",
+            "composition_start_seconds_exact": "1/4",
+            "media_zero_composition": {
+              "timescale": 1000,
+              "units_exact": "250",
+              "seconds_exact": "1/4",
+              "seconds": 0.25
+            },
+            "unit_rate_offset_media": {
+              "timescale": 48000,
+              "units_exact": "-12000",
+              "seconds_exact": "-1/4",
+              "seconds": -0.25
+            },
+            "leading_empty_seconds_exact": "1/4",
+            "negative_timeline_origin": false
+          },
+          "findings": [
+            {
+              "severity": "info",
+              "code": "cross_timescale",
+              "message": "cross-timescale conversion: mvhd=1000, mdhd=48000",
+              "box_path": "/moov/trak/edts/elst"
+            }
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "severity": "info",
+          "code": "cross_timescale",
+          "message": "cross-timescale conversion: mvhd=1000, mdhd=48000",
+          "box_path": "/moov/trak/edts/elst"
+        }
+      ]
+    },
+    {
+      "path": "testdata/cases/02_negative_origin_shift.mov",
+      "file_size": 88777,
+      "movie": {
+        "timescale": 1000,
+        "duration": 800,
+        "duration_seconds_exact": "4/5"
+      },
+      "tracks": [
+        {
+          "index": 0,
+          "track_id": 1,
+          "handler": "soun",
+          "is_audio": true,
+          "tkhd": {
+            "version": 0,
+            "track_id": 1,
+            "duration_movie_units": 800
+          },
+          "mdhd": {
+            "version": 0,
+            "timescale": 44100,
+            "duration_media_units": 44100
+          },
+          "elst": {
+            "box_offset": 244,
+            "version": 0,
+            "entry_count": 1
+          },
+          "edits": [
+            {
+              "index": 0,
+              "kind": "media_playback",
+              "empty": false,
+              "dwell": false,
+              "negative_media_time": false,
+              "segment_duration_movie_units": 800,
+              "composition_interval": {
+                "timescale": 1000,
+                "start_units_exact": "0",
+                "end_units_exact": "800",
+                "duration_units_exact": "800",
+                "start_seconds_exact": "0",
+                "end_seconds_exact": "4/5",
+                "duration_seconds_exact": "4/5",
+                "start_seconds": 0,
+                "end_seconds": 0.8,
+                "duration_seconds": 0.8
+              },
+              "media_interval": {
+                "timescale": 44100,
+                "start_units_exact": "8820",
+                "end_units_exact": "44100",
+                "duration_units_exact": "35280",
+                "start_seconds_exact": "1/5",
+                "end_seconds_exact": "1",
+                "duration_seconds_exact": "4/5",
+                "start_seconds": 0.2,
+                "end_seconds": 1,
+                "duration_seconds": 0.8
+              },
+              "media_duration_rounded": {
+                "floor": "35280",
+                "nearest": "35280",
+                "ceil": "35280"
+              },
+              "media_zero_on_composition": {
+                "timescale": 1000,
+                "units_exact": "-200",
+                "seconds_exact": "-1/5",
+                "seconds": -0.2
+              },
+              "media_rate_raw_hex": "0x00010000",
+              "media_rate_fixed": "1",
+              "media_rate_rational": "1",
+              "warnings": [
+                "media time zero maps to a negative composition time; sample timestamps require a negative shift"
+              ]
+            }
+          ],
+          "audio_start": {
+            "edit_index": 0,
+            "kind": "media_playback",
+            "source_media_time_units": 8820,
+            "source_media_time_seconds_exact": "1/5",
+            "composition_start_movie_units": "0",
+            "composition_start_seconds_exact": "0",
+            "media_zero_composition": {
+              "timescale": 1000,
+              "units_exact": "-200",
+              "seconds_exact": "-1/5",
+              "seconds": -0.2
+            },
+            "unit_rate_offset_media": {
+              "timescale": 44100,
+              "units_exact": "8820",
+              "seconds_exact": "1/5",
+              "seconds": 0.2
+            },
+            "negative_timeline_origin": true
+          },
+          "findings": [
+            {
+              "severity": "info",
+              "code": "cross_timescale",
+              "message": "cross-timescale conversion: mvhd=1000, mdhd=44100",
+              "box_path": "/moov/trak/edts/elst"
+            }
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "severity": "info",
+          "code": "cross_timescale",
+          "message": "cross-timescale conversion: mvhd=1000, mdhd=44100",
+          "box_path": "/moov/trak/edts/elst"
+        }
+      ]
+    },
+    {
+      "path": "testdata/cases/03_negative_media_time_field.mov",
+      "file_size": 96577,
+      "movie": {
+        "timescale": 1000,
+        "duration": 800,
+        "duration_seconds_exact": "4/5"
+      },
+      "tracks": [
+        {
+          "index": 0,
+          "track_id": 1,
+          "handler": "soun",
+          "is_audio": true,
+          "tkhd": {
+            "version": 0,
+            "track_id": 1,
+            "duration_movie_units": 800
+          },
+          "mdhd": {
+            "version": 0,
+            "timescale": 48000,
+            "duration_media_units": 48000
+          },
+          "elst": {
+            "box_offset": 244,
+            "version": 0,
+            "entry_count": 1
+          },
+          "edits": [
+            {
+              "index": 0,
+              "kind": "media_playback",
+              "empty": false,
+              "dwell": false,
+              "negative_media_time": true,
+              "segment_duration_movie_units": 800,
+              "composition_interval": {
+                "timescale": 1000,
+                "start_units_exact": "0",
+                "end_units_exact": "800",
+                "duration_units_exact": "800",
+                "start_seconds_exact": "0",
+                "end_seconds_exact": "4/5",
+                "duration_seconds_exact": "4/5",
+                "start_seconds": 0,
+                "end_seconds": 0.8,
+                "duration_seconds": 0.8
+              },
+              "media_interval": {
+                "timescale": 48000,
+                "start_units_exact": "-2",
+                "end_units_exact": "38398",
+                "duration_units_exact": "38400",
+                "start_seconds_exact": "-1/24000",
+                "end_seconds_exact": "19199/24000",
+                "duration_seconds_exact": "4/5",
+                "start_seconds": -0.000041666666666666665,
+                "end_seconds": 0.7999583333333333,
+                "duration_seconds": 0.8
+              },
+              "media_duration_rounded": {
+                "floor": "38400",
+                "nearest": "38400",
+                "ceil": "38400"
+              },
+              "media_zero_on_composition": {
+                "timescale": 1000,
+                "units_exact": "1/24",
+                "seconds_exact": "1/24000",
+                "seconds": 0.000041666666666666665
+              },
+              "media_rate_raw_hex": "0x00010000",
+              "media_rate_fixed": "1",
+              "media_rate_rational": "1",
+              "warnings": [
+                "nonstandard negative media_time (<-1); strict FFmpeg rejects it, but signed arithmetic is retained for audit"
+              ]
+            }
+          ],
+          "audio_start": {
+            "edit_index": 0,
+            "kind": "media_playback",
+            "source_media_time_units": -2,
+            "source_media_time_seconds_exact": "-1/24000",
+            "composition_start_movie_units": "0",
+            "composition_start_seconds_exact": "0",
+            "media_zero_composition": {
+              "timescale": 1000,
+              "units_exact": "1/24",
+              "seconds_exact": "1/24000",
+              "seconds": 0.000041666666666666665
+            },
+            "unit_rate_offset_media": {
+              "timescale": 48000,
+              "units_exact": "-2",
+              "seconds_exact": "-1/24000",
+              "seconds": -0.000041666666666666665
+            },
+            "negative_timeline_origin": false
+          },
+          "findings": [
+            {
+              "severity": "warning",
+              "code": "negative_media_time_field",
+              "message": "edit 0 has nonstandard media_time=-2",
+              "box_path": "/moov/trak/edts/elst"
+            },
+            {
+              "severity": "info",
+              "code": "cross_timescale",
+              "message": "cross-timescale conversion: mvhd=1000, mdhd=48000",
+              "box_path": "/moov/trak/edts/elst"
+            }
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "severity": "warning",
+          "code": "negative_media_time_field",
+          "message": "edit 0 has nonstandard media_time=-2",
+          "box_path": "/moov/trak/edts/elst"
+        },
+        {
+          "severity": "info",
+          "code": "cross_timescale",
+          "message": "cross-timescale conversion: mvhd=1000, mdhd=48000",
+          "box_path": "/moov/trak/edts/elst"
+        }
+      ]
+    },
+    {
+      "path": "testdata/cases/04_zero_rate_dwell.mov",
+      "file_size": 96589,
+      "movie": {
+        "timescale": 1000,
+        "duration": 1000,
+        "duration_seconds_exact": "1"
+      },
+      "tracks": [
+        {
+          "index": 0,
+          "track_id": 1,
+          "handler": "soun",
+          "is_audio": true,
+          "tkhd": {
+            "version": 0,
+            "track_id": 1,
+            "duration_movie_units": 1000
+          },
+          "mdhd": {
+            "version": 0,
+            "timescale": 48000,
+            "duration_media_units": 48000
+          },
+          "elst": {
+            "box_offset": 244,
+            "version": 0,
+            "entry_count": 2
+          },
+          "edits": [
+            {
+              "index": 0,
+              "kind": "dwell_zero_rate",
+              "empty": false,
+              "dwell": true,
+              "negative_media_time": false,
+              "segment_duration_movie_units": 500,
+              "composition_interval": {
+                "timescale": 1000,
+                "start_units_exact": "0",
+                "end_units_exact": "500",
+                "duration_units_exact": "500",
+                "start_seconds_exact": "0",
+                "end_seconds_exact": "1/2",
+                "duration_seconds_exact": "1/2",
+                "start_seconds": 0,
+                "end_seconds": 0.5,
+                "duration_seconds": 0.5
+              },
+              "media_interval": {
+                "timescale": 48000,
+                "start_units_exact": "12000",
+                "end_units_exact": "12000",
+                "duration_units_exact": "0",
+                "start_seconds_exact": "1/4",
+                "end_seconds_exact": "1/4",
+                "duration_seconds_exact": "0",
+                "start_seconds": 0.25,
+                "end_seconds": 0.25,
+                "duration_seconds": 0
+              },
+              "media_duration_rounded": {
+                "floor": "0",
+                "nearest": "0",
+                "ceil": "0"
+              },
+              "media_rate_raw_hex": "0x00000000",
+              "media_rate_fixed": "0",
+              "media_rate_rational": "0",
+              "warnings": [
+                "media_rate=0: ISO BMFF dwell; present the single media-time point for the whole segment and consume zero media duration"
+              ]
+            },
+            {
+              "index": 1,
+              "kind": "media_playback",
+              "empty": false,
+              "dwell": false,
+              "negative_media_time": false,
+              "segment_duration_movie_units": 500,
+              "composition_interval": {
+                "timescale": 1000,
+                "start_units_exact": "500",
+                "end_units_exact": "1000",
+                "duration_units_exact": "500",
+                "start_seconds_exact": "1/2",
+                "end_seconds_exact": "1",
+                "duration_seconds_exact": "1/2",
+                "start_seconds": 0.5,
+                "end_seconds": 1,
+                "duration_seconds": 0.5
+              },
+              "media_interval": {
+                "timescale": 48000,
+                "start_units_exact": "24000",
+                "end_units_exact": "48000",
+                "duration_units_exact": "24000",
+                "start_seconds_exact": "1/2",
+                "end_seconds_exact": "1",
+                "duration_seconds_exact": "1/2",
+                "start_seconds": 0.5,
+                "end_seconds": 1,
+                "duration_seconds": 0.5
+              },
+              "media_duration_rounded": {
+                "floor": "24000",
+                "nearest": "24000",
+                "ceil": "24000"
+              },
+              "media_zero_on_composition": {
+                "timescale": 1000,
+                "units_exact": "0",
+                "seconds_exact": "0",
+                "seconds": 0
+              },
+              "media_rate_raw_hex": "0x00010000",
+              "media_rate_fixed": "1",
+              "media_rate_rational": "1"
+            }
+          ],
+          "audio_start": {
+            "edit_index": 0,
+            "kind": "dwell_zero_rate",
+            "source_media_time_units": 12000,
+            "source_media_time_seconds_exact": "1/4",
+            "composition_start_movie_units": "0",
+            "composition_start_seconds_exact": "0",
+            "negative_timeline_origin": false
+          },
+          "findings": [
+            {
+              "severity": "warning",
+              "code": "zero_rate_dwell",
+              "message": "edit 0 is a zero-rate dwell at media time 12000",
+              "box_path": "/moov/trak/edts/elst"
+            },
+            {
+              "severity": "info",
+              "code": "cross_timescale",
+              "message": "cross-timescale conversion: mvhd=1000, mdhd=48000",
+              "box_path": "/moov/trak/edts/elst"
+            }
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "severity": "warning",
+          "code": "zero_rate_dwell",
+          "message": "edit 0 is a zero-rate dwell at media time 12000",
+          "box_path": "/moov/trak/edts/elst"
+        },
+        {
+          "severity": "info",
+          "code": "cross_timescale",
+          "message": "cross-timescale conversion: mvhd=1000, mdhd=48000",
+          "box_path": "/moov/trak/edts/elst"
+        }
+      ]
+    },
+    {
+      "path": "testdata/cases/05_cross_timescale_600_to_22050.mov",
+      "file_size": 44677,
+      "movie": {
+        "timescale": 600,
+        "duration": 250,
+        "duration_seconds_exact": "5/12"
+      },
+      "tracks": [
+        {
+          "index": 0,
+          "track_id": 1,
+          "handler": "soun",
+          "is_audio": true,
+          "tkhd": {
+            "version": 0,
+            "track_id": 1,
+            "duration_movie_units": 250
+          },
+          "mdhd": {
+            "version": 0,
+            "timescale": 22050,
+            "duration_media_units": 22050
+          },
+          "elst": {
+            "box_offset": 244,
+            "version": 0,
+            "entry_count": 1
+          },
+          "edits": [
+            {
+              "index": 0,
+              "kind": "media_playback",
+              "empty": false,
+              "dwell": false,
+              "negative_media_time": false,
+              "segment_duration_movie_units": 250,
+              "composition_interval": {
+                "timescale": 600,
+                "start_units_exact": "0",
+                "end_units_exact": "250",
+                "duration_units_exact": "250",
+                "start_seconds_exact": "0",
+                "end_seconds_exact": "5/12",
+                "duration_seconds_exact": "5/12",
+                "start_seconds": 0,
+                "end_seconds": 0.4166666666666667,
+                "duration_seconds": 0.4166666666666667
+              },
+              "media_interval": {
+                "timescale": 22050,
+                "start_units_exact": "0",
+                "end_units_exact": "18375/2",
+                "duration_units_exact": "18375/2",
+                "start_seconds_exact": "0",
+                "end_seconds_exact": "5/12",
+                "duration_seconds_exact": "5/12",
+                "start_seconds": 0,
+                "end_seconds": 0.4166666666666667,
+                "duration_seconds": 0.4166666666666667
+              },
+              "media_duration_rounded": {
+                "floor": "9187",
+                "nearest": "9188",
+                "ceil": "9188"
+              },
+              "media_zero_on_composition": {
+                "timescale": 600,
+                "units_exact": "0",
+                "seconds_exact": "0",
+                "seconds": 0
+              },
+              "media_rate_raw_hex": "0x00010000",
+              "media_rate_fixed": "1",
+              "media_rate_rational": "1"
+            }
+          ],
+          "audio_start": {
+            "edit_index": 0,
+            "kind": "media_playback",
+            "source_media_time_units": 0,
+            "source_media_time_seconds_exact": "0",
+            "composition_start_movie_units": "0",
+            "composition_start_seconds_exact": "0",
+            "media_zero_composition": {
+              "timescale": 600,
+              "units_exact": "0",
+              "seconds_exact": "0",
+              "seconds": 0
+            },
+            "unit_rate_offset_media": {
+              "timescale": 22050,
+              "units_exact": "0",
+              "seconds_exact": "0",
+              "seconds": 0
+            },
+            "negative_timeline_origin": false
+          },
+          "findings": [
+            {
+              "severity": "info",
+              "code": "cross_timescale",
+              "message": "cross-timescale conversion: mvhd=600, mdhd=22050",
+              "box_path": "/moov/trak/edts/elst"
+            }
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "severity": "info",
+          "code": "cross_timescale",
+          "message": "cross-timescale conversion: mvhd=600, mdhd=22050",
+          "box_path": "/moov/trak/edts/elst"
+        }
+      ]
+    },
+    {
+      "path": "testdata/cases/06_media_rate_2x.mov",
+      "file_size": 96577,
+      "movie": {
+        "timescale": 1000,
+        "duration": 500,
+        "duration_seconds_exact": "1/2"
+      },
+      "tracks": [
+        {
+          "index": 0,
+          "track_id": 1,
+          "handler": "soun",
+          "is_audio": true,
+          "tkhd": {
+            "version": 0,
+            "track_id": 1,
+            "duration_movie_units": 500
+          },
+          "mdhd": {
+            "version": 0,
+            "timescale": 48000,
+            "duration_media_units": 48000
+          },
+          "elst": {
+            "box_offset": 244,
+            "version": 0,
+            "entry_count": 1
+          },
+          "edits": [
+            {
+              "index": 0,
+              "kind": "media_playback",
+              "empty": false,
+              "dwell": false,
+              "negative_media_time": false,
+              "segment_duration_movie_units": 500,
+              "composition_interval": {
+                "timescale": 1000,
+                "start_units_exact": "0",
+                "end_units_exact": "500",
+                "duration_units_exact": "500",
+                "start_seconds_exact": "0",
+                "end_seconds_exact": "1/2",
+                "duration_seconds_exact": "1/2",
+                "start_seconds": 0,
+                "end_seconds": 0.5,
+                "duration_seconds": 0.5
+              },
+              "media_interval": {
+                "timescale": 48000,
+                "start_units_exact": "0",
+                "end_units_exact": "48000",
+                "duration_units_exact": "48000",
+                "start_seconds_exact": "0",
+                "end_seconds_exact": "1",
+                "duration_seconds_exact": "1",
+                "start_seconds": 0,
+                "end_seconds": 1,
+                "duration_seconds": 1
+              },
+              "media_duration_rounded": {
+                "floor": "48000",
+                "nearest": "48000",
+                "ceil": "48000"
+              },
+              "media_zero_on_composition": {
+                "timescale": 1000,
+                "units_exact": "0",
+                "seconds_exact": "0",
+                "seconds": 0
+              },
+              "media_rate_raw_hex": "0x00020000",
+              "media_rate_fixed": "2",
+              "media_rate_rational": "2",
+              "warnings": [
+                "non-unit media rate 2: media interval duration is rate-scaled"
+              ]
+            }
+          ],
+          "audio_start": {
+            "edit_index": 0,
+            "kind": "media_playback",
+            "source_media_time_units": 0,
+            "source_media_time_seconds_exact": "0",
+            "composition_start_movie_units": "0",
+            "composition_start_seconds_exact": "0",
+            "media_zero_composition": {
+              "timescale": 1000,
+              "units_exact": "0",
+              "seconds_exact": "0",
+              "seconds": 0
+            },
+            "negative_timeline_origin": false
+          },
+          "findings": [
+            {
+              "severity": "info",
+              "code": "cross_timescale",
+              "message": "cross-timescale conversion: mvhd=1000, mdhd=48000",
+              "box_path": "/moov/trak/edts/elst"
+            },
+            {
+              "severity": "info",
+              "code": "non_unit_media_rate",
+              "message": "non-unit positive media rate 2",
+              "box_path": "/moov/trak/edts/elst"
+            }
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "severity": "info",
+          "code": "cross_timescale",
+          "message": "cross-timescale conversion: mvhd=1000, mdhd=48000",
+          "box_path": "/moov/trak/edts/elst"
+        },
+        {
+          "severity": "info",
+          "code": "non_unit_media_rate",
+          "message": "non-unit positive media rate 2",
+          "box_path": "/moov/trak/edts/elst"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "files": 6,
+    "tracks": 6,
+    "edits": 8,
+    "errors": 0,
+    "warnings": 2,
+    "empty_edits": 1,
+    "dwell_edits": 1,
+    "negative_starts": 2,
+    "cross_timescales": 6
+  }
+}
