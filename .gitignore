@@ -1,0 +1,7 @@
+# local demo/output artifacts
+/demo/
+/out/
+/*.report.json
+
+# go build output
+/adlabel
