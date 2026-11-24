@@ -1,0 +1,165 @@
+{
+  "video": {
+    "width": 1920,
+    "height": 1080
+  },
+  "strips": [
+    {
+      "id": "0001",
+      "start": "00:00:01.000",
+      "end": "00:00:04.000",
+      "text": "你好，世界",
+      "image": "images/0001.png",
+      "box": {
+        "x": 660,
+        "y": 980,
+        "w": 600,
+        "h": 60
+      },
+      "anchor": "bottom-center",
+      "rotationDeg": 0,
+      "fill": "#FFFFFF",
+      "fontSizePx": 42,
+      "outline": null,
+      "shadow": null,
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "align": "center"
+    },
+    {
+      "id": "0002",
+      "start": "00:00:05.000",
+      "end": "00:00:08.500",
+      "text": "带描边的台词",
+      "image": "images/0002.png",
+      "box": {
+        "x": 660,
+        "y": 980,
+        "w": 600,
+        "h": 60
+      },
+      "anchor": "bottom-center",
+      "rotationDeg": 0,
+      "fill": "#FFFFFF",
+      "fontSizePx": 42,
+      "outline": {
+        "widthPx": 2.5,
+        "color": "#000000"
+      },
+      "shadow": null,
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "align": "center"
+    },
+    {
+      "id": "0003",
+      "start": "00:00:09.000",
+      "end": "00:00:12.000",
+      "text": "淡入淡出的台词",
+      "image": "images/0003.png",
+      "box": {
+        "x": 660,
+        "y": 980,
+        "w": 600,
+        "h": 60
+      },
+      "anchor": "bottom-center",
+      "rotationDeg": 0,
+      "fill": "#FFFFFF",
+      "fontSizePx": 42,
+      "outline": null,
+      "shadow": null,
+      "fadeInMs": 400,
+      "fadeOutMs": 600,
+      "align": "center"
+    },
+    {
+      "id": "0004",
+      "start": "00:00:13.000",
+      "end": "00:00:16.000",
+      "text": "左上角标题",
+      "image": "images/0004.png",
+      "box": {
+        "x": 80,
+        "y": 60,
+        "w": 500,
+        "h": 70
+      },
+      "anchor": "top-left",
+      "rotationDeg": 0,
+      "fill": "#FFE080",
+      "fontSizePx": 54,
+      "outline": null,
+      "shadow": null,
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "align": "left"
+    },
+    {
+      "id": "0005",
+      "start": "00:00:13.500",
+      "end": "00:00:15.500",
+      "text": "同时出现的底部台词",
+      "image": "images/0005.png",
+      "box": {
+        "x": 660,
+        "y": 980,
+        "w": 600,
+        "h": 60
+      },
+      "anchor": "bottom-center",
+      "rotationDeg": 0,
+      "fill": "#FFFFFF",
+      "fontSizePx": 42,
+      "outline": null,
+      "shadow": null,
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "align": "center"
+    },
+    {
+      "id": "0006",
+      "start": "00:00:17.000",
+      "end": "00:00:20.000",
+      "text": "竖排旋转文字",
+      "image": "images/0006.png",
+      "box": {
+        "x": 1700,
+        "y": 300,
+        "w": 80,
+        "h": 500
+      },
+      "anchor": "top-right",
+      "rotationDeg": 90,
+      "fill": "#FFFFFF",
+      "fontSizePx": 40,
+      "outline": null,
+      "shadow": null,
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "align": "center"
+    },
+    {
+      "id": "0007",
+      "start": "00:00:21.000",
+      "end": "00:00:24.000",
+      "text": "",
+      "image": "images/0007.png",
+      "box": {
+        "x": 660,
+        "y": 980,
+        "w": 600,
+        "h": 60
+      },
+      "anchor": "bottom-center",
+      "rotationDeg": 0,
+      "fill": "",
+      "fontSizePx": 0,
+      "outline": null,
+      "shadow": null,
+      "fadeInMs": 0,
+      "fadeOutMs": 0,
+      "align": ""
+    }
+  ]
+}
