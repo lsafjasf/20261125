@@ -1,0 +1,477 @@
+{
+  "OTIO_SCHEMA": "ReversibleFlatTimeline/v1",
+  "version": 1,
+  "source_OTIO_SCHEMA": "Timeline",
+  "name": "nested-demo",
+  "global_start_time": {
+    "value": 0,
+    "rate": 24
+  },
+  "root": {
+    "OTIO_SCHEMA": "Stack",
+    "name": "tracks",
+    "index": -1,
+    "local_start": {
+      "value": 0,
+      "rate": 1
+    },
+    "children_present": true
+  },
+  "items": [
+    {
+      "OTIO_SCHEMA": "Clip",
+      "id": "opening",
+      "name": "Opening",
+      "index": 0,
+      "local_start": {
+        "value": 0,
+        "rate": 1
+      },
+      "source_range": {
+        "start_time": {
+          "value": 0,
+          "rate": 24
+        },
+        "duration": {
+          "value": 48,
+          "rate": 24
+        }
+      },
+      "media_reference": {
+        "OTIO_SCHEMA": "ExternalReference",
+        "id": "camera-a",
+        "target_url": "media://camera-a.mov",
+        "available_range": {
+          "start_time": {
+            "value": 0,
+            "rate": 24
+          },
+          "duration": {
+            "value": 480,
+            "rate": 24
+          }
+        }
+      },
+      "global_start": {
+        "value": 0,
+        "rate": 1
+      },
+      "resolved_duration": {
+        "value": 48,
+        "rate": 24
+      },
+      "path": [
+        {
+          "OTIO_SCHEMA": "Stack",
+          "name": "tracks",
+          "index": -1,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        },
+        {
+          "OTIO_SCHEMA": "Track",
+          "id": "V1",
+          "name": "Video Track",
+          "index": 0,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        }
+      ]
+    },
+    {
+      "OTIO_SCHEMA": "Clip",
+      "id": "insert-a-1",
+      "index": 0,
+      "local_start": {
+        "value": 0,
+        "rate": 1
+      },
+      "source_range": {
+        "start_time": {
+          "value": 24,
+          "rate": 24
+        },
+        "duration": {
+          "value": 24,
+          "rate": 24
+        }
+      },
+      "media_reference": {
+        "OTIO_SCHEMA": "ExternalReference",
+        "target_url": "media://insert.mov"
+      },
+      "global_start": {
+        "value": 2,
+        "rate": 1
+      },
+      "resolved_duration": {
+        "value": 24,
+        "rate": 24
+      },
+      "path": [
+        {
+          "OTIO_SCHEMA": "Stack",
+          "name": "tracks",
+          "index": -1,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        },
+        {
+          "OTIO_SCHEMA": "Track",
+          "id": "V1",
+          "name": "Video Track",
+          "index": 0,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        },
+        {
+          "OTIO_SCHEMA": "Sequence",
+          "id": "picture-in-picture-parent",
+          "name": "Nested Parent Sequence",
+          "index": 1,
+          "local_start": {
+            "value": 2,
+            "rate": 1
+          },
+          "children_present": true,
+          "source_range": {
+            "start_time": {
+              "value": 12,
+              "rate": 24
+            },
+            "duration": {
+              "value": 72,
+              "rate": 24
+            }
+          }
+        },
+        {
+          "OTIO_SCHEMA": "Sequence",
+          "id": "insert-a",
+          "name": "Insert A",
+          "index": 0,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        }
+      ]
+    },
+    {
+      "OTIO_SCHEMA": "Gap",
+      "id": "bridge-gap",
+      "index": 1,
+      "local_start": {
+        "value": 1,
+        "rate": 1
+      },
+      "duration": {
+        "value": 12,
+        "rate": 24
+      },
+      "global_start": {
+        "value": 3,
+        "rate": 1
+      },
+      "resolved_duration": {
+        "value": 12,
+        "rate": 24
+      },
+      "path": [
+        {
+          "OTIO_SCHEMA": "Stack",
+          "name": "tracks",
+          "index": -1,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        },
+        {
+          "OTIO_SCHEMA": "Track",
+          "id": "V1",
+          "name": "Video Track",
+          "index": 0,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        },
+        {
+          "OTIO_SCHEMA": "Sequence",
+          "id": "picture-in-picture-parent",
+          "name": "Nested Parent Sequence",
+          "index": 1,
+          "local_start": {
+            "value": 2,
+            "rate": 1
+          },
+          "children_present": true,
+          "source_range": {
+            "start_time": {
+              "value": 12,
+              "rate": 24
+            },
+            "duration": {
+              "value": 72,
+              "rate": 24
+            }
+          }
+        },
+        {
+          "OTIO_SCHEMA": "Sequence",
+          "id": "insert-a",
+          "name": "Insert A",
+          "index": 0,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        }
+      ]
+    },
+    {
+      "OTIO_SCHEMA": "Clip",
+      "id": "insert-a-2",
+      "index": 2,
+      "local_start": {
+        "value": 3,
+        "rate": 2
+      },
+      "source_range": {
+        "start_time": {
+          "value": 72,
+          "rate": 24
+        },
+        "duration": {
+          "value": 36,
+          "rate": 24
+        }
+      },
+      "media_reference": {
+        "OTIO_SCHEMA": "ExternalReference",
+        "target_url": "media://insert.mov"
+      },
+      "global_start": {
+        "value": 7,
+        "rate": 2
+      },
+      "resolved_duration": {
+        "value": 36,
+        "rate": 24
+      },
+      "path": [
+        {
+          "OTIO_SCHEMA": "Stack",
+          "name": "tracks",
+          "index": -1,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        },
+        {
+          "OTIO_SCHEMA": "Track",
+          "id": "V1",
+          "name": "Video Track",
+          "index": 0,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        },
+        {
+          "OTIO_SCHEMA": "Sequence",
+          "id": "picture-in-picture-parent",
+          "name": "Nested Parent Sequence",
+          "index": 1,
+          "local_start": {
+            "value": 2,
+            "rate": 1
+          },
+          "children_present": true,
+          "source_range": {
+            "start_time": {
+              "value": 12,
+              "rate": 24
+            },
+            "duration": {
+              "value": 72,
+              "rate": 24
+            }
+          }
+        },
+        {
+          "OTIO_SCHEMA": "Sequence",
+          "id": "insert-a",
+          "name": "Insert A",
+          "index": 0,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        }
+      ]
+    },
+    {
+      "OTIO_SCHEMA": "Clip",
+      "id": "caption-1",
+      "index": 0,
+      "local_start": {
+        "value": 0,
+        "rate": 1
+      },
+      "source_range": {
+        "start_time": {
+          "value": 0,
+          "rate": 24
+        },
+        "duration": {
+          "value": 72,
+          "rate": 24
+        }
+      },
+      "media_reference": {
+        "OTIO_SCHEMA": "ExternalReference",
+        "target_url": "media://captions.mov"
+      },
+      "global_start": {
+        "value": 5,
+        "rate": 1
+      },
+      "resolved_duration": {
+        "value": 72,
+        "rate": 24
+      },
+      "path": [
+        {
+          "OTIO_SCHEMA": "Stack",
+          "name": "tracks",
+          "index": -1,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        },
+        {
+          "OTIO_SCHEMA": "Track",
+          "id": "V1",
+          "name": "Video Track",
+          "index": 0,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        },
+        {
+          "OTIO_SCHEMA": "Sequence",
+          "id": "picture-in-picture-parent",
+          "name": "Nested Parent Sequence",
+          "index": 1,
+          "local_start": {
+            "value": 2,
+            "rate": 1
+          },
+          "children_present": true,
+          "source_range": {
+            "start_time": {
+              "value": 12,
+              "rate": 24
+            },
+            "duration": {
+              "value": 72,
+              "rate": 24
+            }
+          }
+        },
+        {
+          "OTIO_SCHEMA": "Stack",
+          "id": "caption-stack",
+          "name": "Caption Stack",
+          "layout": "parallel",
+          "index": 1,
+          "local_start": {
+            "value": 3,
+            "rate": 1
+          },
+          "children_present": true
+        }
+      ]
+    },
+    {
+      "OTIO_SCHEMA": "Clip",
+      "id": "ending",
+      "index": 2,
+      "local_start": {
+        "value": 5,
+        "rate": 1
+      },
+      "source_range": {
+        "start_time": {
+          "value": 0,
+          "rate": 24
+        },
+        "duration": {
+          "value": 24,
+          "rate": 24
+        }
+      },
+      "media_reference": {
+        "OTIO_SCHEMA": "ExternalReference",
+        "target_url": "media://camera-a.mov"
+      },
+      "global_start": {
+        "value": 5,
+        "rate": 1
+      },
+      "resolved_duration": {
+        "value": 24,
+        "rate": 24
+      },
+      "path": [
+        {
+          "OTIO_SCHEMA": "Stack",
+          "name": "tracks",
+          "index": -1,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        },
+        {
+          "OTIO_SCHEMA": "Track",
+          "id": "V1",
+          "name": "Video Track",
+          "index": 0,
+          "local_start": {
+            "value": 0,
+            "rate": 1
+          },
+          "children_present": true
+        }
+      ]
+    }
+  ]
+}

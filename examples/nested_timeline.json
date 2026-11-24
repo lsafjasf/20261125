@@ -1,0 +1,118 @@
+{
+  "OTIO_SCHEMA": "Timeline",
+  "name": "nested-demo",
+  "global_start_time": {
+    "value": 0,
+    "rate": 24
+  },
+  "tracks": {
+    "OTIO_SCHEMA": "Stack",
+    "name": "tracks",
+    "children": [
+      {
+        "OTIO_SCHEMA": "Track",
+        "id": "V1",
+        "name": "Video Track",
+        "children": [
+          {
+            "OTIO_SCHEMA": "Clip",
+            "id": "opening",
+            "name": "Opening",
+            "source_range": {
+              "start_time": { "value": 0, "rate": 24 },
+              "duration": { "value": 48, "rate": 24 }
+            },
+            "media_reference": {
+              "OTIO_SCHEMA": "ExternalReference",
+              "id": "camera-a",
+              "target_url": "media://camera-a.mov",
+              "available_range": {
+                "start_time": { "value": 0, "rate": 24 },
+                "duration": { "value": 480, "rate": 24 }
+              }
+            }
+          },
+          {
+            "OTIO_SCHEMA": "Sequence",
+            "id": "picture-in-picture-parent",
+            "name": "Nested Parent Sequence",
+            "source_range": {
+              "start_time": { "value": 12, "rate": 24 },
+              "duration": { "value": 72, "rate": 24 }
+            },
+            "children": [
+              {
+                "OTIO_SCHEMA": "Sequence",
+                "id": "insert-a",
+                "name": "Insert A",
+                "children": [
+                  {
+                    "OTIO_SCHEMA": "Clip",
+                    "id": "insert-a-1",
+                    "source_range": {
+                      "start_time": { "value": 24, "rate": 24 },
+                      "duration": { "value": 24, "rate": 24 }
+                    },
+                    "media_reference": {
+                      "OTIO_SCHEMA": "ExternalReference",
+                      "target_url": "media://insert.mov"
+                    }
+                  },
+                  {
+                    "OTIO_SCHEMA": "Gap",
+                    "id": "bridge-gap",
+                    "duration": { "value": 12, "rate": 24 }
+                  },
+                  {
+                    "OTIO_SCHEMA": "Clip",
+                    "id": "insert-a-2",
+                    "source_range": {
+                      "start_time": { "value": 72, "rate": 24 },
+                      "duration": { "value": 36, "rate": 24 }
+                    },
+                    "media_reference": {
+                      "OTIO_SCHEMA": "ExternalReference",
+                      "target_url": "media://insert.mov"
+                    }
+                  }
+                ]
+              },
+              {
+                "OTIO_SCHEMA": "Stack",
+                "id": "caption-stack",
+                "name": "Caption Stack",
+                "layout": "parallel",
+                "children": [
+                  {
+                    "OTIO_SCHEMA": "Clip",
+                    "id": "caption-1",
+                    "source_range": {
+                      "start_time": { "value": 0, "rate": 24 },
+                      "duration": { "value": 72, "rate": 24 }
+                    },
+                    "media_reference": {
+                      "OTIO_SCHEMA": "ExternalReference",
+                      "target_url": "media://captions.mov"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "OTIO_SCHEMA": "Clip",
+            "id": "ending",
+            "source_range": {
+              "start_time": { "value": 0, "rate": 24 },
+              "duration": { "value": 24, "rate": 24 }
+            },
+            "media_reference": {
+              "OTIO_SCHEMA": "ExternalReference",
+              "target_url": "media://camera-a.mov"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
