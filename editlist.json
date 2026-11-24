@@ -1,0 +1,112 @@
+{
+  "title": "PROMO_MASTER_V3",
+  "fpsNum": 30000,
+  "fpsDen": 1001,
+  "sampleRate": 48000,
+  "video": [
+    {
+      "id": "V1",
+      "clip": "clipA_intro.mov",
+      "track": 1,
+      "recordInFrames": 0,
+      "recordOutFrames": 750,
+      "sourceInFrames": 100,
+      "sourceOutFrames": 850,
+      "transition": "cut"
+    },
+    {
+      "id": "V2",
+      "clip": "clipB_city.mov",
+      "track": 1,
+      "recordInFrames": 750,
+      "recordOutFrames": 1500,
+      "sourceInFrames": 0,
+      "sourceOutFrames": 750,
+      "transition": "dissolve",
+      "transitionFrames": 30
+    },
+    {
+      "id": "V3",
+      "clip": "clipC_interview.mov",
+      "track": 1,
+      "recordInFrames": 1500,
+      "recordOutFrames": 2700,
+      "sourceInFrames": 300,
+      "sourceOutFrames": 1500,
+      "transition": "cut"
+    },
+    {
+      "id": "V4",
+      "clip": "clipD_action.mov",
+      "track": 1,
+      "recordInFrames": 2700,
+      "recordOutFrames": 3900,
+      "sourceInFrames": 0,
+      "sourceOutFrames": 1800,
+      "transition": "cut",
+      "speedNum": 3,
+      "speedDen": 2
+    },
+    {
+      "id": "V5",
+      "clip": "clipE_bug.mov",
+      "track": 2,
+      "recordInFrames": 3000,
+      "recordOutFrames": 3600,
+      "sourceInFrames": 50,
+      "sourceOutFrames": 650,
+      "transition": "cut"
+    },
+    {
+      "id": "V6",
+      "clip": "clipF_outro.mov",
+      "track": 1,
+      "recordInFrames": 3900,
+      "recordOutFrames": 7200,
+      "sourceInFrames": 0,
+      "sourceOutFrames": 3300,
+      "transition": "cut"
+    }
+  ],
+  "audio": [
+    {
+      "id": "A1",
+      "clip": "music_bed.wav",
+      "track": 1,
+      "recordInSamples": 0,
+      "recordOutSamples": 11531520,
+      "sourceInSamples": 0,
+      "sourceOutSamples": 11531520,
+      "fadeInSamples": 48000,
+      "fadeOutSamples": 96000
+    },
+    {
+      "id": "A2",
+      "clip": "dialog_interview.wav",
+      "track": 2,
+      "recordInSamples": 480000,
+      "recordOutSamples": 3840000,
+      "sourceInSamples": 96000,
+      "sourceOutSamples": 3456000
+    },
+    {
+      "id": "A3",
+      "clip": "voiceover.wav",
+      "track": 2,
+      "recordInSamples": 5760000,
+      "recordOutSamples": 8640000,
+      "sourceInSamples": 0,
+      "sourceOutSamples": 2880000,
+      "fadeInSamples": 24000
+    },
+    {
+      "id": "A4",
+      "clip": "sfx_whoosh.wav",
+      "track": 3,
+      "recordInSamples": 9600,
+      "recordOutSamples": 105600,
+      "sourceInSamples": 0,
+      "sourceOutSamples": 96000
+    }
+  ]
+}

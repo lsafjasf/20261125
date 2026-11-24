@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.8">
+  <resources>
+    <format id="r1" frameDuration="1001/30000s" width="1920" height="1080"/>
+  </resources>
+  <library>
+    <event name="PROMO_MASTER_V3">
+      <project name="PROMO_MASTER_V3">
+        <sequence format="r1" tcStart="0s" tcFormat="DF">
+          <spine>
+            <asset-clip name="clipA_intro.mov" note="V1" offset="0s" duration="1001/40s" start="1001/300s" srcDuration="1001/40s" lane="0"/>
+            <asset-clip name="clipB_city.mov" note="V2" offset="1001/40s" duration="1001/40s" start="0s" srcDuration="1001/40s" lane="0" transition="dissolve" transitionDuration="1001/1000s"/>
+            <asset-clip name="clipC_interview.mov" note="V3" offset="1001/20s" duration="1001/25s" start="1001/100s" srcDuration="1001/25s" lane="0"/>
+            <asset-clip name="clipD_action.mov" note="V4" offset="9009/100s" duration="1001/25s" start="0s" srcDuration="3003/50s" lane="0" speed="3/2"/>
+            <asset-clip name="clipE_bug.mov" note="V5" offset="1001/10s" duration="1001/50s" start="1001/600s" srcDuration="1001/50s" lane="1"/>
+            <asset-clip name="clipF_outro.mov" note="V6" offset="13013/100s" duration="11011/100s" start="0s" srcDuration="11011/100s" lane="0"/>
+            <asset-clip name="music_bed.wav" note="A1" role="audio" offset="8/375s" duration="6006/25s" start="0s" lane="a1" fadeIn="1s" fadeOut="2s"/>
+            <asset-clip name="dialog_interview.wav" note="A2" role="audio" offset="3758/375s" duration="70s" start="2s" lane="a2"/>
+            <asset-clip name="voiceover.wav" note="A3" role="audio" offset="45008/375s" duration="60s" start="0s" lane="a2" fadeIn="1/2s"/>
+            <asset-clip name="sfx_whoosh.wav" note="A4" role="audio" offset="83/375s" duration="2s" start="0s" lane="a3"/>
+          </spine>
+        </sequence>
+      </project>
+    </event>
+  </library>
+</fcpxml>
