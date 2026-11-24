@@ -1,0 +1,5 @@
+# One video line per text line. Optional F<field>-L<line>: prefix.
+# Valid 8-bit ANC packet, DID 61/01, DC=1, payload 41, CS=A4.
+F1-L21: 00 FF FF 61 01 01 41 A4
+# Unknown Type-1 DID CA with DBN 10, empty payload, CS=CA+10+00=DA.
+F2-L334: 00 FF FF CA 10 00 DA

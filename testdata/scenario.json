@@ -1,0 +1,137 @@
+{
+  "schema": "ancscan/input-v1",
+  "standard": "625i50",
+  "encoding": "u16be",
+  "continuation_lines": 1,
+  "expected_lines": {
+    "0x41": [
+      25,
+      336
+    ],
+    "0x60": [
+      13
+    ]
+  },
+  "lines": [
+    {
+      "field": 1,
+      "line": 22,
+      "number": 0,
+      "encoding": "",
+      "words": null,
+      "data_hex": "80808080000003ff03ff01610101010800960069004b000f000100ce0043000001d5",
+      "hex": "",
+      "data_base64": "",
+      "base64": "",
+      "stream_offset": 0
+    },
+    {
+      "field": 1,
+      "line": 23,
+      "number": 0,
+      "encoding": "anc8",
+      "words": null,
+      "data_hex": "00ffffca1004deadbeef16",
+      "hex": "",
+      "data_base64": "",
+      "base64": "",
+      "stream_offset": 0
+    },
+    {
+      "field": 1,
+      "line": 24,
+      "number": 0,
+      "encoding": "",
+      "words": null,
+      "data_hex": "000003ff03ff03600101010400000012003400560101",
+      "hex": "",
+      "data_base64": "",
+      "base64": "",
+      "stream_offset": 0
+    },
+    {
+      "field": 1,
+      "line": 25,
+      "number": 0,
+      "encoding": "anc8",
+      "words": null,
+      "data_hex": "00ffff410502084431",
+      "hex": "",
+      "data_base64": "",
+      "base64": "",
+      "stream_offset": 0
+    },
+    {
+      "field": 1,
+      "line": 26,
+      "number": 0,
+      "encoding": "",
+      "words": null,
+      "data_hex": "000003ff03ff01610101020600110022",
+      "hex": "",
+      "data_base64": "",
+      "base64": "",
+      "stream_offset": 0
+    },
+    {
+      "field": 1,
+      "line": 27,
+      "number": 0,
+      "encoding": "",
+      "words": null,
+      "data_hex": "003300440055006601cd",
+      "hex": "",
+      "data_base64": "",
+      "base64": "",
+      "stream_offset": 0
+    },
+    {
+      "field": 2,
+      "line": 335,
+      "number": 0,
+      "encoding": "",
+      "words": null,
+      "data_hex": "000003ff03ff0161010102030001",
+      "hex": "",
+      "data_base64": "",
+      "base64": "",
+      "stream_offset": 0
+    },
+    {
+      "field": 2,
+      "line": 336,
+      "number": 0,
+      "encoding": "",
+      "words": null,
+      "data_hex": "000003ff03ff0241020501010008014f",
+      "hex": "",
+      "data_base64": "",
+      "base64": "",
+      "stream_offset": 0
+    },
+    {
+      "field": 2,
+      "line": 337,
+      "number": 0,
+      "encoding": "",
+      "words": null,
+      "data_hex": "000003ff03ff01610101010800960069004b000f000100ce0043000001d5",
+      "hex": "",
+      "data_base64": "",
+      "base64": "",
+      "stream_offset": 0
+    },
+    {
+      "field": 2,
+      "line": 338,
+      "number": 0,
+      "encoding": "",
+      "words": null,
+      "data_hex": "000003ff03ff02770102010400aa00bb00cc",
+      "hex": "",
+      "data_base64": "",
+      "base64": "",
+      "stream_offset": 0
+    }
+  ]
+}
