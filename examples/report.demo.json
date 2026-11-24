@@ -1,0 +1,1131 @@
+{
+  "schema": "avsync.report/v1",
+  "options": {
+    "fps": 25,
+    "frame_duration_ns": 40000000,
+    "tolerance_ns": 2000000,
+    "jump_threshold_ns": 20000000,
+    "drift_budget_ns": 80000000,
+    "min_samples": 4,
+    "context": 5
+  },
+  "classification": "local_frame_skip",
+  "confidence": "high",
+  "summary": "首个异常帧 frame=22500 @ 15m0s，阶段=edit，形态=局部跳帧，约 6 帧；最终唇音偏移 240.0 ms（音频超前/口型偏慢）",
+  "first_abnormal_frame": {
+    "frame": 22500,
+    "stage": "edit",
+    "series": "lip_sync_edit",
+    "kind": "local_frame_skip",
+    "detail": "lip_sync_edit 在帧 22500 出现 240000000 ns 持续偏移阶跃"
+  },
+  "first_root_cause_frame": {
+    "frame": 22500,
+    "stage": "edit",
+    "series": "lip_sync_edit",
+    "kind": "local_frame_skip",
+    "detail": "lip_sync_edit 在帧 22500 出现 240000000 ns 持续偏移阶跃"
+  },
+  "first_playback_anomaly_frame": {
+    "frame": 22500,
+    "stage": "playback",
+    "series": "lip_sync_playback",
+    "kind": "local_frame_skip",
+    "detail": "lip_sync_playback 在帧 22500 出现 240000000 ns 持续偏移阶跃"
+  },
+  "observed_final_offset_ns": 240000000,
+  "estimated_skipped_frames": 6,
+  "stage_summaries": [
+    {
+      "stage": "capture",
+      "samples": 22750,
+      "last_frame": 22749,
+      "first_position_ns": 0,
+      "last_position_ns": 909960000000,
+      "position_jumps": 0,
+      "frame_index_gaps": 0,
+      "output_index_gaps": 0,
+      "frame_stride": 1,
+      "output_stride": 1
+    },
+    {
+      "stage": "pts",
+      "samples": 22750,
+      "last_frame": 22749,
+      "first_position_ns": 0,
+      "last_position_ns": 909960000000,
+      "position_jumps": 0,
+      "frame_index_gaps": 0,
+      "output_index_gaps": 0,
+      "frame_stride": 1,
+      "output_stride": 1
+    },
+    {
+      "stage": "edit",
+      "samples": 22750,
+      "last_frame": 22749,
+      "first_position_ns": 0,
+      "last_position_ns": 909960000000,
+      "position_jumps": 0,
+      "frame_index_gaps": 0,
+      "output_index_gaps": 0,
+      "frame_stride": 1,
+      "output_stride": 1
+    },
+    {
+      "stage": "render",
+      "samples": 22750,
+      "last_frame": 22749,
+      "first_position_ns": 0,
+      "last_position_ns": 909960000000,
+      "position_jumps": 0,
+      "frame_index_gaps": 0,
+      "output_index_gaps": 0,
+      "frame_stride": 1,
+      "output_stride": 1
+    },
+    {
+      "stage": "playback",
+      "samples": 22750,
+      "last_frame": 22749,
+      "first_position_ns": 0,
+      "last_position_ns": 909960000000,
+      "position_jumps": 0,
+      "frame_index_gaps": 0,
+      "output_index_gaps": 0,
+      "frame_stride": 1,
+      "output_stride": 1
+    }
+  ],
+  "series": [
+    {
+      "name": "timeline_capture",
+      "stage": "capture",
+      "kind": "in_sync",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 0,
+      "last_value_ns": 0,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 0,
+      "drift_ns": 0,
+      "r2": 1,
+      "persistent": false
+    },
+    {
+      "name": "timeline_pts",
+      "stage": "pts",
+      "kind": "in_sync",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 0,
+      "last_value_ns": 0,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 0,
+      "drift_ns": 0,
+      "r2": 1,
+      "persistent": false
+    },
+    {
+      "name": "timeline_edit",
+      "stage": "edit",
+      "kind": "in_sync",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 0,
+      "last_value_ns": 0,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 0,
+      "drift_ns": 0,
+      "r2": 1,
+      "persistent": false
+    },
+    {
+      "name": "timeline_render",
+      "stage": "render",
+      "kind": "in_sync",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 0,
+      "last_value_ns": 0,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 0,
+      "drift_ns": 0,
+      "r2": 1,
+      "persistent": false
+    },
+    {
+      "name": "timeline_playback",
+      "stage": "playback",
+      "kind": "in_sync",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 0,
+      "last_value_ns": 0,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 0,
+      "drift_ns": 0,
+      "r2": 1,
+      "persistent": false
+    },
+    {
+      "name": "capture_to_pts",
+      "stage": "pts",
+      "kind": "in_sync",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 0,
+      "last_value_ns": 0,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 0,
+      "drift_ns": 0,
+      "r2": 1,
+      "persistent": false
+    },
+    {
+      "name": "pts_to_edit",
+      "stage": "edit",
+      "kind": "in_sync",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 0,
+      "last_value_ns": 0,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 0,
+      "drift_ns": 0,
+      "r2": 1,
+      "persistent": false
+    },
+    {
+      "name": "edit_to_render",
+      "stage": "render",
+      "kind": "in_sync",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 0,
+      "last_value_ns": 0,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 0,
+      "drift_ns": 0,
+      "r2": 1,
+      "persistent": false
+    },
+    {
+      "name": "render_to_playback",
+      "stage": "playback",
+      "kind": "in_sync",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 0,
+      "last_value_ns": 0,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 0,
+      "drift_ns": 0,
+      "r2": 1,
+      "persistent": false
+    },
+    {
+      "name": "end_to_end_capture_to_playback",
+      "stage": "playback",
+      "kind": "in_sync",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 0,
+      "last_value_ns": 0,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 0,
+      "drift_ns": 0,
+      "r2": 1,
+      "persistent": false
+    },
+    {
+      "name": "lip_sync_capture",
+      "stage": "capture",
+      "kind": "in_sync",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 0,
+      "last_value_ns": 0,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 0,
+      "drift_ns": 0,
+      "r2": 1,
+      "persistent": false
+    },
+    {
+      "name": "lip_sync_pts",
+      "stage": "pts",
+      "kind": "in_sync",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 0,
+      "last_value_ns": 0,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 0,
+      "drift_ns": 0,
+      "r2": 1,
+      "persistent": false
+    },
+    {
+      "name": "lip_sync_edit",
+      "stage": "edit",
+      "kind": "local_frame_skip",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 240000000,
+      "last_value_ns": 240000000,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 687.9245631819933,
+      "drift_ns": 15649596,
+      "r2": 0.03260475794248707,
+      "jump_frame": 22500,
+      "jump_ns": 240000000,
+      "persistent": true,
+      "estimated_skipped_frames": 6,
+      "first_change_frame": 22500,
+      "first_absolute_offset_frame": 22500
+    },
+    {
+      "name": "lip_sync_render",
+      "stage": "render",
+      "kind": "local_frame_skip",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 240000000,
+      "last_value_ns": 240000000,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 687.9245631819933,
+      "drift_ns": 15649596,
+      "r2": 0.03260475794248707,
+      "jump_frame": 22500,
+      "jump_ns": 240000000,
+      "persistent": true,
+      "estimated_skipped_frames": 6,
+      "first_change_frame": 22500,
+      "first_absolute_offset_frame": 22500
+    },
+    {
+      "name": "lip_sync_playback",
+      "stage": "playback",
+      "kind": "local_frame_skip",
+      "confidence": "high",
+      "samples": 22750,
+      "first_frame": 0,
+      "last_frame": 22749,
+      "initial_median_ns": 0,
+      "final_median_ns": 240000000,
+      "last_value_ns": 240000000,
+      "median_ns": 0,
+      "mad_ns": 0,
+      "slope_ns_per_frame": 687.9245631819933,
+      "drift_ns": 15649596,
+      "r2": 0.03260475794248707,
+      "jump_frame": 22500,
+      "jump_ns": 240000000,
+      "persistent": true,
+      "estimated_skipped_frames": 6,
+      "first_change_frame": 22500,
+      "first_absolute_offset_frame": 22500
+    }
+  ],
+  "anomalies": [
+    {
+      "frame": 22500,
+      "stage": "edit",
+      "series": "lip_sync_edit",
+      "kind": "local_frame_skip",
+      "message": "lip_sync_edit 在帧 22500 出现 240000000 ns 持续偏移阶跃",
+      "jump_ns": 240000000,
+      "missing_frames": 6
+    },
+    {
+      "frame": 22500,
+      "stage": "render",
+      "series": "lip_sync_render",
+      "kind": "local_frame_skip",
+      "message": "lip_sync_render 在帧 22500 出现 240000000 ns 持续偏移阶跃",
+      "jump_ns": 240000000,
+      "missing_frames": 6
+    },
+    {
+      "frame": 22500,
+      "stage": "playback",
+      "series": "lip_sync_playback",
+      "kind": "local_frame_skip",
+      "message": "lip_sync_playback 在帧 22500 出现 240000000 ns 持续偏移阶跃",
+      "jump_ns": 240000000,
+      "missing_frames": 6
+    }
+  ],
+  "evidence_rows": [
+    {
+      "frame": 0,
+      "positions_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      },
+      "video_positions_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      },
+      "audio_positions_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      }
+    },
+    {
+      "frame": 1,
+      "positions_ns": {
+        "capture": 40000000,
+        "edit": 40000000,
+        "playback": 40000000,
+        "pts": 40000000,
+        "render": 40000000
+      },
+      "video_positions_ns": {
+        "capture": 40000000,
+        "edit": 40000000,
+        "playback": 40000000,
+        "pts": 40000000,
+        "render": 40000000
+      },
+      "audio_positions_ns": {
+        "capture": 40000000,
+        "edit": 40000000,
+        "playback": 40000000,
+        "pts": 40000000,
+        "render": 40000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      }
+    },
+    {
+      "frame": 2,
+      "positions_ns": {
+        "capture": 80000000,
+        "edit": 80000000,
+        "playback": 80000000,
+        "pts": 80000000,
+        "render": 80000000
+      },
+      "video_positions_ns": {
+        "capture": 80000000,
+        "edit": 80000000,
+        "playback": 80000000,
+        "pts": 80000000,
+        "render": 80000000
+      },
+      "audio_positions_ns": {
+        "capture": 80000000,
+        "edit": 80000000,
+        "playback": 80000000,
+        "pts": 80000000,
+        "render": 80000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      }
+    },
+    {
+      "frame": 3,
+      "positions_ns": {
+        "capture": 120000000,
+        "edit": 120000000,
+        "playback": 120000000,
+        "pts": 120000000,
+        "render": 120000000
+      },
+      "video_positions_ns": {
+        "capture": 120000000,
+        "edit": 120000000,
+        "playback": 120000000,
+        "pts": 120000000,
+        "render": 120000000
+      },
+      "audio_positions_ns": {
+        "capture": 120000000,
+        "edit": 120000000,
+        "playback": 120000000,
+        "pts": 120000000,
+        "render": 120000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      }
+    },
+    {
+      "frame": 4,
+      "positions_ns": {
+        "capture": 160000000,
+        "edit": 160000000,
+        "playback": 160000000,
+        "pts": 160000000,
+        "render": 160000000
+      },
+      "video_positions_ns": {
+        "capture": 160000000,
+        "edit": 160000000,
+        "playback": 160000000,
+        "pts": 160000000,
+        "render": 160000000
+      },
+      "audio_positions_ns": {
+        "capture": 160000000,
+        "edit": 160000000,
+        "playback": 160000000,
+        "pts": 160000000,
+        "render": 160000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      }
+    },
+    {
+      "frame": 5,
+      "positions_ns": {
+        "capture": 200000000,
+        "edit": 200000000,
+        "playback": 200000000,
+        "pts": 200000000,
+        "render": 200000000
+      },
+      "video_positions_ns": {
+        "capture": 200000000,
+        "edit": 200000000,
+        "playback": 200000000,
+        "pts": 200000000,
+        "render": 200000000
+      },
+      "audio_positions_ns": {
+        "capture": 200000000,
+        "edit": 200000000,
+        "playback": 200000000,
+        "pts": 200000000,
+        "render": 200000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      }
+    },
+    {
+      "frame": 22495,
+      "positions_ns": {
+        "capture": 899800000000,
+        "edit": 899800000000,
+        "playback": 899800000000,
+        "pts": 899800000000,
+        "render": 899800000000
+      },
+      "video_positions_ns": {
+        "capture": 899800000000,
+        "edit": 899800000000,
+        "playback": 899800000000,
+        "pts": 899800000000,
+        "render": 899800000000
+      },
+      "audio_positions_ns": {
+        "capture": 899800000000,
+        "edit": 899800000000,
+        "playback": 899800000000,
+        "pts": 899800000000,
+        "render": 899800000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      }
+    },
+    {
+      "frame": 22496,
+      "positions_ns": {
+        "capture": 899840000000,
+        "edit": 899840000000,
+        "playback": 899840000000,
+        "pts": 899840000000,
+        "render": 899840000000
+      },
+      "video_positions_ns": {
+        "capture": 899840000000,
+        "edit": 899840000000,
+        "playback": 899840000000,
+        "pts": 899840000000,
+        "render": 899840000000
+      },
+      "audio_positions_ns": {
+        "capture": 899840000000,
+        "edit": 899840000000,
+        "playback": 899840000000,
+        "pts": 899840000000,
+        "render": 899840000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      }
+    },
+    {
+      "frame": 22497,
+      "positions_ns": {
+        "capture": 899880000000,
+        "edit": 899880000000,
+        "playback": 899880000000,
+        "pts": 899880000000,
+        "render": 899880000000
+      },
+      "video_positions_ns": {
+        "capture": 899880000000,
+        "edit": 899880000000,
+        "playback": 899880000000,
+        "pts": 899880000000,
+        "render": 899880000000
+      },
+      "audio_positions_ns": {
+        "capture": 899880000000,
+        "edit": 899880000000,
+        "playback": 899880000000,
+        "pts": 899880000000,
+        "render": 899880000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      }
+    },
+    {
+      "frame": 22498,
+      "positions_ns": {
+        "capture": 899920000000,
+        "edit": 899920000000,
+        "playback": 899920000000,
+        "pts": 899920000000,
+        "render": 899920000000
+      },
+      "video_positions_ns": {
+        "capture": 899920000000,
+        "edit": 899920000000,
+        "playback": 899920000000,
+        "pts": 899920000000,
+        "render": 899920000000
+      },
+      "audio_positions_ns": {
+        "capture": 899920000000,
+        "edit": 899920000000,
+        "playback": 899920000000,
+        "pts": 899920000000,
+        "render": 899920000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      }
+    },
+    {
+      "frame": 22499,
+      "positions_ns": {
+        "capture": 899960000000,
+        "edit": 899960000000,
+        "playback": 899960000000,
+        "pts": 899960000000,
+        "render": 899960000000
+      },
+      "video_positions_ns": {
+        "capture": 899960000000,
+        "edit": 899960000000,
+        "playback": 899960000000,
+        "pts": 899960000000,
+        "render": 899960000000
+      },
+      "audio_positions_ns": {
+        "capture": 899960000000,
+        "edit": 899960000000,
+        "playback": 899960000000,
+        "pts": 899960000000,
+        "render": 899960000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 0,
+        "playback": 0,
+        "pts": 0,
+        "render": 0
+      }
+    },
+    {
+      "frame": 22500,
+      "positions_ns": {
+        "capture": 900000000000,
+        "edit": 900000000000,
+        "playback": 900000000000,
+        "pts": 900000000000,
+        "render": 900000000000
+      },
+      "video_positions_ns": {
+        "capture": 900000000000,
+        "edit": 900000000000,
+        "playback": 900000000000,
+        "pts": 900000000000,
+        "render": 900000000000
+      },
+      "audio_positions_ns": {
+        "capture": 900000000000,
+        "edit": 900240000000,
+        "playback": 900240000000,
+        "pts": 900000000000,
+        "render": 900240000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 240000000,
+        "playback": 240000000,
+        "pts": 0,
+        "render": 240000000
+      }
+    },
+    {
+      "frame": 22501,
+      "positions_ns": {
+        "capture": 900040000000,
+        "edit": 900040000000,
+        "playback": 900040000000,
+        "pts": 900040000000,
+        "render": 900040000000
+      },
+      "video_positions_ns": {
+        "capture": 900040000000,
+        "edit": 900040000000,
+        "playback": 900040000000,
+        "pts": 900040000000,
+        "render": 900040000000
+      },
+      "audio_positions_ns": {
+        "capture": 900040000000,
+        "edit": 900280000000,
+        "playback": 900280000000,
+        "pts": 900040000000,
+        "render": 900280000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 240000000,
+        "playback": 240000000,
+        "pts": 0,
+        "render": 240000000
+      }
+    },
+    {
+      "frame": 22502,
+      "positions_ns": {
+        "capture": 900080000000,
+        "edit": 900080000000,
+        "playback": 900080000000,
+        "pts": 900080000000,
+        "render": 900080000000
+      },
+      "video_positions_ns": {
+        "capture": 900080000000,
+        "edit": 900080000000,
+        "playback": 900080000000,
+        "pts": 900080000000,
+        "render": 900080000000
+      },
+      "audio_positions_ns": {
+        "capture": 900080000000,
+        "edit": 900320000000,
+        "playback": 900320000000,
+        "pts": 900080000000,
+        "render": 900320000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 240000000,
+        "playback": 240000000,
+        "pts": 0,
+        "render": 240000000
+      }
+    },
+    {
+      "frame": 22503,
+      "positions_ns": {
+        "capture": 900120000000,
+        "edit": 900120000000,
+        "playback": 900120000000,
+        "pts": 900120000000,
+        "render": 900120000000
+      },
+      "video_positions_ns": {
+        "capture": 900120000000,
+        "edit": 900120000000,
+        "playback": 900120000000,
+        "pts": 900120000000,
+        "render": 900120000000
+      },
+      "audio_positions_ns": {
+        "capture": 900120000000,
+        "edit": 900360000000,
+        "playback": 900360000000,
+        "pts": 900120000000,
+        "render": 900360000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 240000000,
+        "playback": 240000000,
+        "pts": 0,
+        "render": 240000000
+      }
+    },
+    {
+      "frame": 22504,
+      "positions_ns": {
+        "capture": 900160000000,
+        "edit": 900160000000,
+        "playback": 900160000000,
+        "pts": 900160000000,
+        "render": 900160000000
+      },
+      "video_positions_ns": {
+        "capture": 900160000000,
+        "edit": 900160000000,
+        "playback": 900160000000,
+        "pts": 900160000000,
+        "render": 900160000000
+      },
+      "audio_positions_ns": {
+        "capture": 900160000000,
+        "edit": 900400000000,
+        "playback": 900400000000,
+        "pts": 900160000000,
+        "render": 900400000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 240000000,
+        "playback": 240000000,
+        "pts": 0,
+        "render": 240000000
+      }
+    },
+    {
+      "frame": 22505,
+      "positions_ns": {
+        "capture": 900200000000,
+        "edit": 900200000000,
+        "playback": 900200000000,
+        "pts": 900200000000,
+        "render": 900200000000
+      },
+      "video_positions_ns": {
+        "capture": 900200000000,
+        "edit": 900200000000,
+        "playback": 900200000000,
+        "pts": 900200000000,
+        "render": 900200000000
+      },
+      "audio_positions_ns": {
+        "capture": 900200000000,
+        "edit": 900440000000,
+        "playback": 900440000000,
+        "pts": 900200000000,
+        "render": 900440000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 240000000,
+        "playback": 240000000,
+        "pts": 0,
+        "render": 240000000
+      }
+    },
+    {
+      "frame": 22744,
+      "positions_ns": {
+        "capture": 909760000000,
+        "edit": 909760000000,
+        "playback": 909760000000,
+        "pts": 909760000000,
+        "render": 909760000000
+      },
+      "video_positions_ns": {
+        "capture": 909760000000,
+        "edit": 909760000000,
+        "playback": 909760000000,
+        "pts": 909760000000,
+        "render": 909760000000
+      },
+      "audio_positions_ns": {
+        "capture": 909760000000,
+        "edit": 910000000000,
+        "playback": 910000000000,
+        "pts": 909760000000,
+        "render": 910000000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 240000000,
+        "playback": 240000000,
+        "pts": 0,
+        "render": 240000000
+      }
+    },
+    {
+      "frame": 22745,
+      "positions_ns": {
+        "capture": 909800000000,
+        "edit": 909800000000,
+        "playback": 909800000000,
+        "pts": 909800000000,
+        "render": 909800000000
+      },
+      "video_positions_ns": {
+        "capture": 909800000000,
+        "edit": 909800000000,
+        "playback": 909800000000,
+        "pts": 909800000000,
+        "render": 909800000000
+      },
+      "audio_positions_ns": {
+        "capture": 909800000000,
+        "edit": 910040000000,
+        "playback": 910040000000,
+        "pts": 909800000000,
+        "render": 910040000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 240000000,
+        "playback": 240000000,
+        "pts": 0,
+        "render": 240000000
+      }
+    },
+    {
+      "frame": 22746,
+      "positions_ns": {
+        "capture": 909840000000,
+        "edit": 909840000000,
+        "playback": 909840000000,
+        "pts": 909840000000,
+        "render": 909840000000
+      },
+      "video_positions_ns": {
+        "capture": 909840000000,
+        "edit": 909840000000,
+        "playback": 909840000000,
+        "pts": 909840000000,
+        "render": 909840000000
+      },
+      "audio_positions_ns": {
+        "capture": 909840000000,
+        "edit": 910080000000,
+        "playback": 910080000000,
+        "pts": 909840000000,
+        "render": 910080000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 240000000,
+        "playback": 240000000,
+        "pts": 0,
+        "render": 240000000
+      }
+    },
+    {
+      "frame": 22747,
+      "positions_ns": {
+        "capture": 909880000000,
+        "edit": 909880000000,
+        "playback": 909880000000,
+        "pts": 909880000000,
+        "render": 909880000000
+      },
+      "video_positions_ns": {
+        "capture": 909880000000,
+        "edit": 909880000000,
+        "playback": 909880000000,
+        "pts": 909880000000,
+        "render": 909880000000
+      },
+      "audio_positions_ns": {
+        "capture": 909880000000,
+        "edit": 910120000000,
+        "playback": 910120000000,
+        "pts": 909880000000,
+        "render": 910120000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 240000000,
+        "playback": 240000000,
+        "pts": 0,
+        "render": 240000000
+      }
+    },
+    {
+      "frame": 22748,
+      "positions_ns": {
+        "capture": 909920000000,
+        "edit": 909920000000,
+        "playback": 909920000000,
+        "pts": 909920000000,
+        "render": 909920000000
+      },
+      "video_positions_ns": {
+        "capture": 909920000000,
+        "edit": 909920000000,
+        "playback": 909920000000,
+        "pts": 909920000000,
+        "render": 909920000000
+      },
+      "audio_positions_ns": {
+        "capture": 909920000000,
+        "edit": 910160000000,
+        "playback": 910160000000,
+        "pts": 909920000000,
+        "render": 910160000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 240000000,
+        "playback": 240000000,
+        "pts": 0,
+        "render": 240000000
+      }
+    },
+    {
+      "frame": 22749,
+      "positions_ns": {
+        "capture": 909960000000,
+        "edit": 909960000000,
+        "playback": 909960000000,
+        "pts": 909960000000,
+        "render": 909960000000
+      },
+      "video_positions_ns": {
+        "capture": 909960000000,
+        "edit": 909960000000,
+        "playback": 909960000000,
+        "pts": 909960000000,
+        "render": 909960000000
+      },
+      "audio_positions_ns": {
+        "capture": 909960000000,
+        "edit": 910200000000,
+        "playback": 910200000000,
+        "pts": 909960000000,
+        "render": 910200000000
+      },
+      "lip_offset_audio_minus_video_ns": {
+        "capture": 0,
+        "edit": 240000000,
+        "playback": 240000000,
+        "pts": 0,
+        "render": 240000000
+      }
+    }
+  ]
+}
