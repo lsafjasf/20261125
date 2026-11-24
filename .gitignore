@@ -1,0 +1,5 @@
+/rotationaudit
+/rotationaudit.exe
+/rotation-out/
+*.test
+*.out

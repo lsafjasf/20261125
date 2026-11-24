@@ -1,0 +1,392 @@
+{
+  "schemaVersion": "rotationaudit.report/v1",
+  "tool": "rotationaudit v0.1.0",
+  "goVersion": "go1.27.4",
+  "createdUtc": "2026-11-25T01:10:00Z",
+  "outputDirectory": "examples/double-rotation-frames",
+  "ffmpegVersion": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+  "ffprobeVersion": "ffprobe version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2007-2024 the FFmpeg developers",
+  "observation": {
+    "inputPath": "examples/double-rotation.mp4",
+    "streamIndex": 0,
+    "codec": "h264",
+    "codedWidth": 180,
+    "codedHeight": 320,
+    "pixelWidth": 180,
+    "pixelHeight": 320,
+    "pixelOrientation": "portrait",
+    "sampleAspectRatio": "256:81",
+    "sarNumerator": 256,
+    "sarDenominator": 81,
+    "displayAspectRatio": "16:9",
+    "darOrientation": "landscape",
+    "trackDisplayWidth": 320,
+    "trackDisplayHeight": 180,
+    "trackDisplayOrientation": "landscape",
+    "hasTrackDisplay": true,
+    "trackImpliedSar": 3.1604938271604937,
+    "displayClaimWidth": 320,
+    "displayClaimHeight": 180,
+    "displayClaimOrientation": "landscape",
+    "displayClaimSource": "mp4-tkhd-pre-matrix-width-height",
+    "mp4Tracks": [
+      {
+        "handlerType": "vide",
+        "version": 0,
+        "matrix": [
+          0,
+          65536,
+          0,
+          -65536,
+          0,
+          0,
+          0,
+          0,
+          1073741824
+        ],
+        "displayWidth": 320,
+        "displayHeight": 180,
+        "tkhdStart": 156,
+        "matrixOffset": 204,
+        "widthOffset": 240,
+        "heightOffset": 244
+      }
+    ],
+    "mp4Matrix": {
+      "source": "mp4-tkhd",
+      "raw": [
+        0,
+        65536,
+        0,
+        -65536,
+        0,
+        0,
+        0,
+        0,
+        1073741824
+      ],
+      "linearABCD": [
+        0,
+        1,
+        -1,
+        0
+      ],
+      "degreesClockwise": 90,
+      "turnsClockwise": 1,
+      "swapsAxes": true,
+      "quarterTurn": true,
+      "reflection": false,
+      "linearIdentity": false,
+      "convention": "row-major tkhd/display-matrix; FFprobe -90 equals one 90-degree clockwise display turn",
+      "interpretationNote": "active interpretation source priority: mp4-tkhd-matrix"
+    },
+    "ffprobeMatrix": {
+      "source": "ffprobe-side-data",
+      "raw": [
+        0,
+        65536,
+        0,
+        -65536,
+        0,
+        0,
+        0,
+        0,
+        1073741824
+      ],
+      "linearABCD": [
+        0,
+        1,
+        -1,
+        0
+      ],
+      "ffprobeRotationDegrees": -90,
+      "degreesClockwise": 90,
+      "turnsClockwise": 1,
+      "swapsAxes": true,
+      "quarterTurn": true,
+      "reflection": false,
+      "linearIdentity": false,
+      "convention": "row-major tkhd/display-matrix; FFprobe -90 equals one 90-degree clockwise display turn"
+    },
+    "matrixTurnsClockwise": 1,
+    "matrixDegreesClockwise": 90,
+    "matrixSwapsAxes": true,
+    "matrixActive": true,
+    "matrixSource": "mp4-tkhd-matrix",
+    "matrixOutputWidth": 320,
+    "matrixOutputHeight": 180,
+    "matrixOutputOrientation": "landscape",
+    "trackDisplayMatchesCoded": false,
+    "trackDisplayMatchesMatrixOutput": true,
+    "pixelEvidence": {
+      "correctionTurnsClockwise": 3,
+      "correctionDegreesClockwise": 270,
+      "source": "reference-image-mae",
+      "referencePath": "examples/double-rotation.reference.png",
+      "candidateMAE": [
+        118.32375257201646,
+        113.54861111111111,
+        119.08146862139918,
+        1.2220293209876543
+      ],
+      "note": "Lowest 72x72 RGB mean absolute error among raw/cw0,cw90,cw180,cw270 candidates."
+    },
+    "compliantPlayerResidualTurnsCW": 2
+  },
+  "doubleRotationCombinations": [
+    {
+      "id": "C1-landscape-claim-portrait-pixels-quarter-matrix",
+      "title": "横屏声明 × 竖屏真实像素 × 90/270 矩阵",
+      "scope": "file",
+      "triggered": true,
+      "status": "confirmed_double_or_conflicting_rotation",
+      "severity": "high",
+      "conditions": {
+        "displayClaimOrientation": "landscape",
+        "matrixSwapsAxes": true,
+        "matrixTurnsClockwise": 1,
+        "pixelOrientation": "portrait"
+      },
+      "analysis": "Raw pixels need 3 clockwise quarter-turn(s) to become upright, but the compliant matrix applies 1. The matrix-respecting image still needs 2 quarter-turn(s); a bake plus matrix or manual filter is rotating the picture twice/in the wrong direction.",
+      "fix": "Extract with -noautorotate, compare against an upright reference, then choose exactly one transform: keep the matrix or bake the correct rotation and strip the matrix."
+    },
+    {
+      "id": "C2-baked-pixels-plus-active-display-matrix",
+      "title": "已烘入像素的旋转 × 仍生效的显示矩阵",
+      "scope": "file",
+      "triggered": true,
+      "status": "confirmed_same_direction_double_rotation",
+      "severity": "high",
+      "conditions": {
+        "displayMatchesMatrixOutput": true,
+        "displayMatchesPixelGrid": false,
+        "inferredBakedTurnsCW": 1,
+        "matrixActive": true,
+        "matrixTurnsClockwise": 1,
+        "pixelCorrectionKnown": true,
+        "pixelCorrectionTurnsCW": 3,
+        "sameDirectionDoubleTurn": true
+      },
+      "analysis": "Pixels were already rotated 1 quarter-turn(s) clockwise before encoding, and the display matrix requests the same 1 turn(s). A matrix-respecting player applies both, totaling 2 quarter-turn(s).",
+      "consequence": "For 90/270-degree cases the image is usually upside down (180 degrees total); players that ignore the matrix show the sideways baked frame instead.",
+      "fix": "If pixels are already correct, strip/identity the matrix. If pixels are baked sideways, either replace the matrix with the one true correction or bake that correction and write an identity matrix; never do both."
+    },
+    {
+      "id": "C3-default-autorotate-plus-manual-transpose",
+      "title": "默认自动旋转 × 再手动 transpose/rotate",
+      "scope": "pipeline",
+      "triggered": true,
+      "status": "demonstrated_by_double_rotation_png",
+      "severity": "high",
+      "conditions": {
+        "doubleFrameArtifactPrefix": "03-double-rotated",
+        "ffmpegAutorotateDefault": true,
+        "matrixActive": true,
+        "secondRotationFilter": true
+      },
+      "analysis": "FFmpeg-based tools and many players apply display-matrix autorotation by default. Running transpose/rotate again on that already-normalized frame applies the matrix a second time. The generated 03-double-rotated PNG reproduces this exact pipeline mistake.",
+      "consequence": "Two successive matrix-equivalent turns; for a 90-degree metadata value this commonly produces a 180-degree wrong frame.",
+      "fix": "Use either default autorotate with no rotation filter, or -noautorotate followed by exactly one explicitly chosen correction."
+    },
+    {
+      "id": "C4-legacy-rotate-tag-plus-display-matrix",
+      "title": "旧 rotate 标签 × Display Matrix 被当成两次变换",
+      "scope": "file",
+      "triggered": false,
+      "status": "absent",
+      "severity": "info",
+      "conditions": {
+        "conflict": false,
+        "equivalent": false,
+        "legacyTagPresent": false,
+        "legacyTagTurnsCW": -1,
+        "matrixTurnsCW": 1
+      },
+      "analysis": "No legacy rotate tag found.",
+      "fix": "Normalize to one display matrix. Do not add a tag-derived filter when the demuxer/player already exposes/applies side-data rotation."
+    },
+    {
+      "id": "C5-display-width-height-vs-matrix-axis-swap",
+      "title": "显示宽高 × 矩阵换轴 × 真实像素宽高",
+      "scope": "file",
+      "triggered": true,
+      "status": "double_axis_swap_display_dimensions",
+      "severity": "high",
+      "conditions": {
+        "coded": "180x320",
+        "matrixOutput": "320x180",
+        "trackDisplay": "320.00x180.00",
+        "trackImpliedSAR": 3.1605,
+        "trackMatchesCoded": false,
+        "trackMatchesMatrixOutput": true
+      },
+      "analysis": "tkhd width/height already match the matrix-swapped dimensions while the same quarter-turn matrix remains active. FFmpeg derives an implied SAR of 3.160; SAR-aware rotation then reciprocates that SAR and can change the final display orientation/aspect. Dimension-only players, SAR-aware players, and transcode pipelines can therefore choose different swaps or scaling.",
+      "consequence": "One consumer may use tkhd as final display size, another applies the matrix and swaps again, while another honors the implied SAR; this produces inconsistent orientation or stretched frames.",
+      "fix": "Keep tkhd dimensions in the pre-matrix track coordinate system for square pixels, or explicitly author a valid anamorphic SAR. Do not pre-swap tkhd width/height and leave the rotation matrix active."
+    }
+  ],
+  "highRiskCombinations": [
+    {
+      "id": "C1-landscape-claim-portrait-pixels-quarter-matrix",
+      "title": "横屏声明 × 竖屏真实像素 × 90/270 矩阵",
+      "scope": "file",
+      "triggered": true,
+      "status": "confirmed_double_or_conflicting_rotation",
+      "severity": "high",
+      "conditions": {
+        "displayClaimOrientation": "landscape",
+        "matrixSwapsAxes": true,
+        "matrixTurnsClockwise": 1,
+        "pixelOrientation": "portrait"
+      },
+      "analysis": "Raw pixels need 3 clockwise quarter-turn(s) to become upright, but the compliant matrix applies 1. The matrix-respecting image still needs 2 quarter-turn(s); a bake plus matrix or manual filter is rotating the picture twice/in the wrong direction.",
+      "fix": "Extract with -noautorotate, compare against an upright reference, then choose exactly one transform: keep the matrix or bake the correct rotation and strip the matrix."
+    },
+    {
+      "id": "C2-baked-pixels-plus-active-display-matrix",
+      "title": "已烘入像素的旋转 × 仍生效的显示矩阵",
+      "scope": "file",
+      "triggered": true,
+      "status": "confirmed_same_direction_double_rotation",
+      "severity": "high",
+      "conditions": {
+        "displayMatchesMatrixOutput": true,
+        "displayMatchesPixelGrid": false,
+        "inferredBakedTurnsCW": 1,
+        "matrixActive": true,
+        "matrixTurnsClockwise": 1,
+        "pixelCorrectionKnown": true,
+        "pixelCorrectionTurnsCW": 3,
+        "sameDirectionDoubleTurn": true
+      },
+      "analysis": "Pixels were already rotated 1 quarter-turn(s) clockwise before encoding, and the display matrix requests the same 1 turn(s). A matrix-respecting player applies both, totaling 2 quarter-turn(s).",
+      "consequence": "For 90/270-degree cases the image is usually upside down (180 degrees total); players that ignore the matrix show the sideways baked frame instead.",
+      "fix": "If pixels are already correct, strip/identity the matrix. If pixels are baked sideways, either replace the matrix with the one true correction or bake that correction and write an identity matrix; never do both."
+    },
+    {
+      "id": "C3-default-autorotate-plus-manual-transpose",
+      "title": "默认自动旋转 × 再手动 transpose/rotate",
+      "scope": "pipeline",
+      "triggered": true,
+      "status": "demonstrated_by_double_rotation_png",
+      "severity": "high",
+      "conditions": {
+        "doubleFrameArtifactPrefix": "03-double-rotated",
+        "ffmpegAutorotateDefault": true,
+        "matrixActive": true,
+        "secondRotationFilter": true
+      },
+      "analysis": "FFmpeg-based tools and many players apply display-matrix autorotation by default. Running transpose/rotate again on that already-normalized frame applies the matrix a second time. The generated 03-double-rotated PNG reproduces this exact pipeline mistake.",
+      "consequence": "Two successive matrix-equivalent turns; for a 90-degree metadata value this commonly produces a 180-degree wrong frame.",
+      "fix": "Use either default autorotate with no rotation filter, or -noautorotate followed by exactly one explicitly chosen correction."
+    },
+    {
+      "id": "C5-display-width-height-vs-matrix-axis-swap",
+      "title": "显示宽高 × 矩阵换轴 × 真实像素宽高",
+      "scope": "file",
+      "triggered": true,
+      "status": "double_axis_swap_display_dimensions",
+      "severity": "high",
+      "conditions": {
+        "coded": "180x320",
+        "matrixOutput": "320x180",
+        "trackDisplay": "320.00x180.00",
+        "trackImpliedSAR": 3.1605,
+        "trackMatchesCoded": false,
+        "trackMatchesMatrixOutput": true
+      },
+      "analysis": "tkhd width/height already match the matrix-swapped dimensions while the same quarter-turn matrix remains active. FFmpeg derives an implied SAR of 3.160; SAR-aware rotation then reciprocates that SAR and can change the final display orientation/aspect. Dimension-only players, SAR-aware players, and transcode pipelines can therefore choose different swaps or scaling.",
+      "consequence": "One consumer may use tkhd as final display size, another applies the matrix and swaps again, while another honors the implied SAR; this produces inconsistent orientation or stretched frames.",
+      "fix": "Keep tkhd dimensions in the pre-matrix track coordinate system for square pixels, or explicitly author a valid anamorphic SAR. Do not pre-swap tkhd width/height and leave the rotation matrix active."
+    }
+  ],
+  "frames": [
+    {
+      "role": "raw-pixels",
+      "file": "01-raw-pixels-noautorotate.png",
+      "description": "FFmpeg -noautorotate: true coded pixel grid, with no display matrix applied.",
+      "width": 180,
+      "height": 320,
+      "sha256": "8a7c74a869f1ecdd1625ae32a65d907883ed994930f8d957fbd50488b16df9e6"
+    },
+    {
+      "role": "matrix-respecting-player",
+      "file": "02-matrix-respecting-player.png",
+      "description": "FFmpeg default autorotate: the same matrix-aware behavior expected from a compliant player.",
+      "width": 320,
+      "height": 180,
+      "sha256": "15e14b4ef2673b46926c538a0384b7e82f7fb0e195970e3392b0473078df2166"
+    },
+    {
+      "role": "double-rotation-pipeline",
+      "file": "03-double-rotated-autorotate-plus-manual.png",
+      "description": "Default autorotated frame rotated again by the same matrix quarter-turn: the C3 pipeline mistake.",
+      "width": 180,
+      "height": 320,
+      "sha256": "af4d9ad13f7055bedd703c26db4fda80f316f4208eddfc142ff3a51ad9b37ead"
+    },
+    {
+      "role": "raw-candidate-cw0",
+      "file": "candidate-raw-cw0.png",
+      "description": "No-autorotate pixels rotated exactly 0 degrees clockwise; visually choose the upright candidate.",
+      "width": 180,
+      "height": 320,
+      "sha256": "47384e42caed6431e6a8964f82c7b1d9776eb3227a1ec5bb96214b2b0cd051ba"
+    },
+    {
+      "role": "raw-candidate-cw90",
+      "file": "candidate-raw-cw90.png",
+      "description": "No-autorotate pixels rotated exactly 90 degrees clockwise; visually choose the upright candidate.",
+      "width": 320,
+      "height": 180,
+      "sha256": "02727f1e8afb39151a97501ff130a10ef3dd8d91de3ee892024378afc85bc00a"
+    },
+    {
+      "role": "raw-candidate-cw180",
+      "file": "candidate-raw-cw180.png",
+      "description": "No-autorotate pixels rotated exactly 180 degrees clockwise; visually choose the upright candidate.",
+      "width": 180,
+      "height": 320,
+      "sha256": "af4d9ad13f7055bedd703c26db4fda80f316f4208eddfc142ff3a51ad9b37ead"
+    },
+    {
+      "role": "raw-candidate-cw270",
+      "file": "candidate-raw-cw270.png",
+      "description": "No-autorotate pixels rotated exactly 270 degrees clockwise; visually choose the upright candidate.",
+      "width": 320,
+      "height": 180,
+      "sha256": "949b1423189471b9d67c5115ae71f888c0107355112613c970a58004dd8459fd"
+    },
+    {
+      "role": "corrected",
+      "file": "04-corrected.png",
+      "description": "Corrected from raw pixels with exactly 270 clockwise degree(s), source=reference-image-mae.",
+      "width": 320,
+      "height": 180,
+      "sha256": "949b1423189471b9d67c5115ae71f888c0107355112613c970a58004dd8459fd"
+    },
+    {
+      "role": "comparison-sheet",
+      "file": "comparison.png",
+      "description": "Numbered contact sheet: 1 raw pixels, 2 matrix-aware output, 3 double-rotation pipeline, 4 selected correction.",
+      "width": 920,
+      "height": 620,
+      "sha256": "f651076f95ea2fdfdb54c8bb76aadeb2f230f966e3381125ec97e002233cfb47"
+    }
+  ],
+  "conclusion": "检测到 3 个高风险文件元数据/像素组合（C1-landscape-claim-portrait-pixels-quarter-matrix, C2-baked-pixels-plus-active-display-matrix, C5-display-width-height-vs-matrix-axis-swap）。必须以 -noautorotate 原始像素为准，并用参考图或显式方向确定唯一修正；不要在默认 autorotate 的结果上再次 transpose。",
+  "nextSteps": [
+    "先打开 01-raw-pixels-noautorotate.png，确认编码像素网格的真实方向；不要用播放器窗口尺寸代替它。",
+    "再打开 02-matrix-respecting-player.png，它代表遵循 Display Matrix 的播放器/FFmpeg 默认 autorotate 结果。",
+    "检查 rotation-report.md 中 C1-C5 的状态；高风险项表示已证实或高度疑似二次旋转。",
+    "以 04-corrected.png 为准；修复文件时要么清除/改写 tkhd 矩阵，要么烘入唯一旋转后写单位矩阵，不能两者同时保留。"
+  ],
+  "repairCommands": [
+    "ffprobe -v error -show_streams -show_format -of json 'examples/double-rotation.mp4'",
+    "ffmpeg -hide_banner -loglevel error -noautorotate -i 'examples/double-rotation.mp4' -frames:v 1 raw-pixels.png",
+    "ffmpeg -hide_banner -loglevel error -i 'examples/double-rotation.mp4' -frames:v 1 matrix-player.png",
+    "ffmpeg -hide_banner -loglevel error -noautorotate -i 'examples/double-rotation.mp4' -frames:v 1 -vf 'transpose=2' corrected-frame.png",
+    "ffmpeg -hide_banner -loglevel error -noautorotate -i 'examples/double-rotation.mp4' -vf 'transpose=2' -c:v libx264 -pix_fmt yuv420p -c:a copy corrected-baked.mp4",
+    "# 禁止：默认 autorotate 抽帧后再按 ffprobe rotation 手动 transpose；这会复现 03-double-rotated PNG。"
+  ]
+}
