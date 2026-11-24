@@ -1,0 +1,21 @@
+AES3/BMC decode: 411 edges, half-bit=1 (edge-interval-histogram)
+subframes=9 left=4 right=5 parity_errors=0 untrusted=0
+lock intervals:
+  #0 t=256..320 duration=64 edges=[178,178) missing_subframes=1 relock=Y
+    reason: no transitions in interval; clock absent until relock preamble
+subframes:
+  000 frame=0 left  preamble=Z t=0            sample24=1000      V=0 C=1 [block-start,C=1,U=1]
+  001 frame=0 right preamble=Y t=64           sample24=-2000     V=0 C=0 [C=0,U=1]
+  002 frame=1 left  preamble=X t=128          sample24=1017      V=0 C=0 [C=0]
+  003 frame=1 right preamble=Y t=192          sample24=-2019     V=0 C=1 [C=1]
+  004 frame=2 right preamble=Y t=320          sample24=-2038     V=0 C=0 [C=0]
+  005 frame=3 left  preamble=X t=384          sample24=1051      V=0 C=0 [C=0,U=1]
+  006 frame=3 right preamble=Y t=448          sample24=-2057     V=0 C=1 [C=1]
+  007 frame=4 left  preamble=X t=512          sample24=1068      V=0 C=1 [C=1]
+  008 frame=4 right preamble=Y t=576          sample24=-2076     V=0 C=0 [C=0,U=1]
+left channel-status segments:
+  sf=0..2 bits=2 hex=01 block-aligned
+  sf=5..7 bits=2 hex=02
+right channel-status segments:
+  sf=1..3 bits=2 hex=02 block-aligned
+  sf=4..8 bits=3 hex=02
