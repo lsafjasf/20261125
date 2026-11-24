@@ -1,0 +1,139 @@
+{
+  "clean_fixture": "testdata/ffv1-4slices.mkv",
+  "clean_sha256": "2435214fb76d9f24ee66d541d3bc8eb215135395d7e037c307f0e9650377174e",
+  "expectations": {
+    "expected_slices": 4,
+    "frames": [
+      {
+        "index": 0,
+        "sha256": "7ba0610c4ab26e86450707b4ea0ec0895e5b8dc999daa37c1d02fd9dec4b9aa1",
+        "size": 1174,
+        "position": 627,
+        "keyframe": true,
+        "slices": 4
+      },
+      {
+        "index": 1,
+        "sha256": "b57c2a743259fa94812ee052c035c7d35a70a80815906942fb5e1422cfa75273",
+        "size": 1061,
+        "position": 1808,
+        "keyframe": false,
+        "slices": 4
+      },
+      {
+        "index": 2,
+        "sha256": "f3246444449a0fe2a78bf2e66363be4adda05a4e74ca01cfb7135658987c33c4",
+        "size": 1026,
+        "position": 2876,
+        "keyframe": false,
+        "slices": 4
+      },
+      {
+        "index": 3,
+        "sha256": "fcf9f52f99148b7471a92e710470f149def9dc6ce093fffa8e00e101cd2a4d56",
+        "size": 1035,
+        "position": 3909,
+        "keyframe": false,
+        "slices": 4
+      },
+      {
+        "index": 4,
+        "sha256": "efeed8567b0d52d2a88ae72cea301c4be0a1447a560e9a52e4d9c1e1e8320697",
+        "size": 1010,
+        "position": 4951,
+        "keyframe": false,
+        "slices": 4
+      },
+      {
+        "index": 5,
+        "sha256": "99557476797b28c26c87e90c4076d6d1faf6650989f9b42e33af495312ed5ab1",
+        "size": 1140,
+        "position": 5984,
+        "keyframe": true,
+        "slices": 4
+      },
+      {
+        "index": 6,
+        "sha256": "ebe230db5b13f8b9e52c467c2a59962a9fe26e31d4a4fd3282da8e55ecc02c81",
+        "size": 1044,
+        "position": 7131,
+        "keyframe": false,
+        "slices": 4
+      },
+      {
+        "index": 7,
+        "sha256": "5278929a29a504c97fe088a7c2d93d653bc2e7ca94b2f014e05beb81de03c15a",
+        "size": 1042,
+        "position": 8182,
+        "keyframe": false,
+        "slices": 4
+      },
+      {
+        "index": 8,
+        "sha256": "7d1d51bf2402d42bf905e00f871b6deb3adbd2a709c69ff2dfcac89faa644b68",
+        "size": 1021,
+        "position": 9231,
+        "keyframe": false,
+        "slices": 4
+      },
+      {
+        "index": 9,
+        "sha256": "98f928d24cbc54d02f63f6169c653ebdb654b040ca32fd31248654062e54fa8e",
+        "size": 1027,
+        "position": 10259,
+        "keyframe": false,
+        "slices": 4
+      }
+    ]
+  },
+  "injections": [
+    {
+      "file": "01-unknown-matroska-element.mkv",
+      "kind": "unknown_matroska_element",
+      "description": "Segment 末尾加入合法但未注册的 EBML ID 0x1FC0FFEE；必须记录且继续审计",
+      "unknown_elements": 1,
+      "frames": 10
+    },
+    {
+      "file": "02-ffv1-slice-crc-block.mkv",
+      "kind": "ffv1_slice_crc_mismatch",
+      "description": "在第 4 帧第二个 slice 的压缩负载中翻转一个比特；FFV1 CRC 应定位该 slice",
+      "corrupt_frame": 3,
+      "element_offset": 3906,
+      "corrupt_offset": 4332,
+      "frames": 10,
+      "errors": 2,
+      "recoverable_slices": [
+        0,
+        2,
+        3
+      ],
+      "recoverable_ranges": [
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          9
+        ]
+      ]
+    },
+    {
+      "file": "03-truncated-block.mkv",
+      "kind": "truncated_block",
+      "description": "截断第 5 个 block 的负载；之前的帧仍应可恢复",
+      "corrupt_frame": 4,
+      "element_offset": 4948,
+      "corrupt_offset": 5068,
+      "frames": 5,
+      "errors": 7,
+      "recoverable_ranges": [
+        [
+          0,
+          3
+        ]
+      ]
+    }
+  ]
+}
