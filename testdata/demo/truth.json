@@ -1,0 +1,59 @@
+{
+  "sample_rate": 48000,
+  "duration_seconds": 8,
+  "source": "testdata/demo/master-5.1.wav",
+  "export": "testdata/demo/export-5.1.wav",
+  "problems": [
+    {
+      "code": "polarity_inversion",
+      "channels": [
+        "FC"
+      ],
+      "start_seconds": 2,
+      "end_seconds": 5,
+      "detail": "FC 样点极性翻转"
+    },
+    {
+      "code": "channel_swap",
+      "channels": [
+        "BL",
+        "BR"
+      ],
+      "start_seconds": 0,
+      "end_seconds": 8,
+      "detail": "BL/BR 内容互换"
+    },
+    {
+      "code": "surround_attenuation",
+      "channels": [
+        "BL",
+        "BR"
+      ],
+      "start_seconds": 5,
+      "end_seconds": 8,
+      "detail": "环绕衰减约 23 dB"
+    },
+    {
+      "code": "lfe_low_frequency_loss",
+      "channels": [
+        "LFE"
+      ],
+      "start_seconds": 6,
+      "end_seconds": 8,
+      "detail": "LFE 低频衰减约 26 dB"
+    },
+    {
+      "code": "sample_delay",
+      "channels": [
+        "FL"
+      ],
+      "start_seconds": 0,
+      "end_seconds": 8,
+      "detail": "FL 相对母版延迟 3 samples"
+    }
+  ],
+  "controls": [
+    "FL/FR 使用独立去相关宽声场，不应因低相关或负相关被误判为反相",
+    "未故障时段的反相检测不得扩散到整段"
+  ]
+}
