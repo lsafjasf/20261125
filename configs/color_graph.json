@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "name": "di-dailies-grade",
+  "description": "后期样片色彩转换图：解码后一分二调色（合法分叉），再合并混合，最后转换到 sRGB 输出；另含一条未被目标引用的备份支路和一个游离节点用于未使用检测。",
+  "defaultColorSpace": "sRGB",
+  "autoConvert": true,
+  "frames": "frames/input",
+  "targets": ["deliver"],
+  "nodes": [
+    {
+      "id": "plate",
+      "type": "load",
+      "outputs": [
+        { "name": "plate_rgb", "space": "sRGB" }
+      ]
+    },
+    {
+      "id": "decode_linear",
+      "type": "convert",
+      "inputs": [
+        { "name": "encoded", "from": "plate_rgb", "expect": "Linear sRGB" }
+      ],
+      "outputs": [
+        { "name": "scene_linear", "space": "Linear sRGB" }
+      ],
+      "comment": "sRGB 解码（去 gamma）到线性光"
+    },
+    {
+      "id": "grade_warm",
+      "type": "gain",
+      "inputs": ["scene_linear"],
+      "outputs": [{ "name": "warm_linear", "space": "Linear sRGB" }],
+      "gain": 1.0,
+      "rgb": [1.12, 1.0, 0.9]
+    },
+    {
+      "id": "grade_cool",
+      "type": "matrix",
+      "inputs": ["scene_linear"],
+      "outputs": [{ "name": "cool_linear", "space": "Linear sRGB" }],
+      "matrix": [
+        [0.95, 0.02, 0.03],
+        [0.01, 1.02, -0.03],
+        [0.0, 0.03, 1.08]
+      ]
+    },
+    {
+      "id": "backup_grade",
+      "type": "gain",
+      "inputs": ["scene_linear"],
+      "outputs": [{ "name": "backup_linear", "space": "Linear sRGB" }],
+      "gain": 0.8
+    },
+    {
+      "id": "blend_grades",
+      "type": "mix",
+      "mode": "weighted",
+      "weights": [0.6, 0.4],
+      "inputs": [
+        { "name": "warm", "from": "warm_linear" },
+        { "name": "cool", "from": "cool_linear" }
+      ],
+      "outputs": [{ "name": "blend_linear", "space": "Linear sRGB" }]
+    },
+    {
+      "id": "oconvert_srgb",
+      "type": "convert",
+      "inputs": ["blend_linear"],
+      "outputs": [{ "name": "display_srgb", "space": "sRGB" }]
+    },
+    {
+      "id": "deliver",
+      "type": "encode",
+      "inputs": ["display_srgb"],
+      "outputs": [{ "name": "deliver_handle", "space": "sRGB" }]
+    },
+    {
+      "id": "backup_encode",
+      "type": "encode",
+      "inputs": ["backup_linear"],
+      "outputs": [{ "name": "backup_file", "space": "sRGB" }]
+    },
+    {
+      "id": "stray_lut",
+      "type": "matrix",
+      "matrix": [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+      "outputs": [{ "name": "stray_out", "space": "Linear sRGB" }]
+    }
+  ]
+}

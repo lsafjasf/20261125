@@ -1,0 +1,13 @@
+{
+  "name": "minimal-diamond",
+  "defaultColorSpace": "sRGB",
+  "targets": ["out"],
+  "nodes": [
+    { "id": "src", "type": "load", "outputs": [{ "name": "raw", "space": "sRGB" }] },
+    { "id": "decode", "type": "convert", "inputs": ["raw"], "outputs": [{ "name": "lin", "space": "Linear sRGB" }] },
+    { "id": "branch_a", "type": "gain", "inputs": ["lin"], "gain": 1.1, "outputs": [{ "name": "a_lin", "space": "Linear sRGB" }] },
+    { "id": "branch_b", "type": "gain", "inputs": ["lin"], "gain": 0.9, "outputs": [{ "name": "b_lin", "space": "Linear sRGB" }] },
+    { "id": "join", "type": "mix", "mode": "average", "inputs": ["a_lin", "b_lin"], "outputs": [{ "name": "join_lin", "space": "Linear sRGB" }] },
+    { "id": "out", "type": "encode", "inputs": ["join_lin"], "outputs": [{ "name": "final", "space": "sRGB" }] }
+  ]
+}

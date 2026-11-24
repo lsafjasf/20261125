@@ -1,0 +1,21 @@
+{
+  "name": "illegal-grade-feedback-loop",
+  "description": "调色节点把 c 的输出回授给 a，形成 a -> b -> c -> a 真循环；即使 a 同时合并了 ingest，也不是合法合并。",
+  "defaultColorSpace": "sRGB",
+  "targets": ["deliver"],
+  "nodes": [
+    { "id": "ingest", "type": "load", "outputs": [{ "name": "src", "space": "sRGB" }] },
+    {
+      "id": "grade_a",
+      "type": "mix",
+      "inputs": [
+        { "name": "plate", "from": "src" },
+        { "name": "feedback", "from": "c_out" }
+      ],
+      "outputs": [{ "name": "a_out", "space": "Linear sRGB" }]
+    },
+    { "id": "blur_b", "type": "gain", "inputs": ["a_out"], "gain": 1.0, "outputs": [{ "name": "b_out", "space": "Linear sRGB" }] },
+    { "id": "grade_c", "type": "matrix", "inputs": ["b_out"], "outputs": [{ "name": "c_out", "space": "Linear sRGB" }] },
+    { "id": "deliver", "type": "encode", "inputs": ["c_out"], "outputs": [{ "name": "final", "space": "sRGB" }] }
+  ]
+}

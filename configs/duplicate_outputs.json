@@ -1,0 +1,12 @@
+{
+  "name": "duplicate-output-handles",
+  "description": "两个源节点都声明了同名输出 plate_a，造成重复输出；下游按句柄引用时来源不明确。",
+  "defaultColorSpace": "sRGB",
+  "targets": ["finish"],
+  "nodes": [
+    { "id": "load_camera_a", "type": "load", "outputs": [{ "name": "plate_a", "space": "sRGB" }] },
+    { "id": "load_archive_a", "type": "load", "outputs": [{ "name": "plate_a", "space": "BT.709" }] },
+    { "id": "grade", "type": "gain", "inputs": ["plate_a"], "gain": 1.05, "outputs": [{ "name": "graded", "space": "Linear sRGB" }] },
+    { "id": "finish", "type": "encode", "inputs": ["graded"], "outputs": [{ "name": "master", "space": "sRGB" }] }
+  ]
+}
