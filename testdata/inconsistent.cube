@@ -1,0 +1,12 @@
+# Declares 3^3 = 27 entries but contains only 2^3 = 8.
+TITLE "truncated table"
+UNIT
+LUT_3D_SIZE 3
+0 0 0
+1 0 0
+0 1 0
+1 1 0
+0 0 1
+1 0 1
+0 1 1
+1 1 1
