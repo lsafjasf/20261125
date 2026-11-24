@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "reference": "../testdata/clean.mp4",
+  "fixtures": [
+    {
+      "file": "01-container-first-bad-box.mp4",
+      "title": "mdat 后三个 sample 被物理截断，moov 目录仍完整",
+      "dominant_layer": "container",
+      "first_bad_box": {
+        "path": "/mdat",
+        "type": "mdat",
+        "offset": 878
+      },
+      "affected_samples": [
+        6,
+        7,
+        8
+      ],
+      "affected_display_frames": [
+        6,
+        7,
+        8
+      ],
+      "clean_sample_ranges": [
+        {
+          "first": 1,
+          "last": 5
+        }
+      ],
+      "clean_display_frame_ranges": [
+        {
+          "first": 1,
+          "last": 5
+        }
+      ],
+      "reference_pixel_damage": "not_assessed",
+      "decoder_verification": "ffmpeg 可解码前 5 帧；sample 6-8 因 EOF 无 packet"
+    },
+    {
+      "file": "02-sample-table-metadata-only.mp4",
+      "title": "stsz 第 2 项 +1；样本负载字节未变",
+      "dominant_layer": "sample_table",
+      "metadata_box": {
+        "path": "/moov/trak/mdia/minf/stbl/stsz",
+        "type": "stsz",
+        "offset": 701,
+        "field": "sample_size",
+        "entry": 2
+      },
+      "fault_sample": 2,
+      "clean_sample_ranges": [
+        {
+          "first": 1,
+          "last": 8
+        }
+      ],
+      "clean_display_frame_ranges": [
+        {
+          "first": 1,
+          "last": 8
+        }
+      ],
+      "reference_pixel_damage": "ruled_out",
+      "decoder_verification": "ffmpeg 的 NAL/demux 报错来自错误 stsz；不是像素哈希差异"
+    },
+    {
+      "file": "03-compressed-sample2-display-2-4.mp4",
+      "title": "sample 2 切片负载单字节翻转",
+      "dominant_layer": "compressed_data",
+      "fault_sample": 2,
+      "changed_samples": [
+        2
+      ],
+      "affected_samples": [
+        2,
+        3,
+        4
+      ],
+      "affected_display_frames": [
+        2,
+        3,
+        4
+      ],
+      "clean_sample_ranges": [
+        {
+          "first": 1,
+          "last": 1
+        },
+        {
+          "first": 5,
+          "last": 8
+        }
+      ],
+      "clean_display_frame_ranges": [
+        {
+          "first": 1,
+          "last": 1
+        },
+        {
+          "first": 5,
+          "last": 8
+        }
+      ],
+      "reference_pixel_damage": "suspected",
+      "decoder_verification": "ffmpeg framemd5 实测显示帧 2,3,4 与干净基线不同，帧 5 起 IDR 恢复"
+    }
+  ]
+}
