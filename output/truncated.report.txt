@@ -1,0 +1,10 @@
+文件: /home/hj/userfeedback/uid4-0004/samples/cases/truncated.mp4 (10655 字节)
+输出: /home/hj/userfeedback/uid4-0004/output/truncated.repaired.mp4
+扫描到完整 sample: 15，重建索引 sample: 15，关键帧: 1 个 [1]
+诊断: 存在截断
+可播放区间:
+  #1 sample 1-15 (关键帧起 #1, 前导非关键帧 0), 时间 0.000-1.000s, 源字节 1182-8245, keys=[1]
+未恢复部分:
+  [truncated_tail] 字节 8245-10655 (2410 字节): NAL length exceeds available bytes (truncated sample)
+  [missing_index_samples] 缺失 sample 槽位 15 个: stsz lists 30 samples but only 15 complete samples were scanned; 15 extra slots not explained by duplicate records
+修复完成，媒体载荷原样复制 9473 字节；原文件未被修改。

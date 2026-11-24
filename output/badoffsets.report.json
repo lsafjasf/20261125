@@ -1,0 +1,44 @@
+{
+  "input": "/home/hj/userfeedback/uid4-0004/samples/cases/badoffsets.mp4",
+  "output": "/home/hj/userfeedback/uid4-0004/output/badoffsets.repaired.mp4",
+  "file_size": 14715,
+  "media_timescale": 15360,
+  "nominal_fps": 15,
+  "scanned_samples": 30,
+  "indexed_samples": 30,
+  "keyframes": [
+    1,
+    16
+  ],
+  "intervals": [
+    {
+      "index": 1,
+      "first_sample": 1,
+      "last_sample": 30,
+      "first_sync_sample": 1,
+      "leading_non_sync_samples": 0,
+      "keyframes": [
+        1,
+        16
+      ],
+      "start_time_seconds": 0,
+      "end_time_seconds": 2,
+      "start_offset": 48,
+      "end_offset": 13581
+    }
+  ],
+  "unrecovered": [],
+  "damage": {
+    "truncated": false,
+    "old_index_sample_count": 30,
+    "old_index_offset_count": 1,
+    "index_duplicate_offsets": 0,
+    "index_duplicate_records": 0,
+    "bad_offsets": 1,
+    "stream_duplicate_samples": 0,
+    "missing_moov": false,
+    "used_reference": false
+  },
+  "payload_bytes_copied": 13533,
+  "wrote_output": true
+}

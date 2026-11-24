@@ -1,0 +1,55 @@
+{
+  "input": "/home/hj/userfeedback/uid4-0004/samples/cases/truncated.mp4",
+  "output": "/home/hj/userfeedback/uid4-0004/output/truncated.repaired.mp4",
+  "file_size": 10655,
+  "media_timescale": 15360,
+  "nominal_fps": 15,
+  "scanned_samples": 15,
+  "indexed_samples": 15,
+  "keyframes": [
+    1
+  ],
+  "intervals": [
+    {
+      "index": 1,
+      "first_sample": 1,
+      "last_sample": 15,
+      "first_sync_sample": 1,
+      "leading_non_sync_samples": 0,
+      "keyframes": [
+        1
+      ],
+      "start_time_seconds": 0,
+      "end_time_seconds": 1,
+      "start_offset": 1182,
+      "end_offset": 8245
+    }
+  ],
+  "unrecovered": [
+    {
+      "kind": "truncated_tail",
+      "start_offset": 8245,
+      "end_offset": 10655,
+      "length": 2410,
+      "detail": "NAL length exceeds available bytes (truncated sample)"
+    },
+    {
+      "kind": "missing_index_samples",
+      "missing_samples": 15,
+      "detail": "stsz lists 30 samples but only 15 complete samples were scanned; 15 extra slots not explained by duplicate records"
+    }
+  ],
+  "damage": {
+    "truncated": true,
+    "old_index_sample_count": 30,
+    "old_index_offset_count": 1,
+    "index_duplicate_offsets": 0,
+    "index_duplicate_records": 0,
+    "bad_offsets": 0,
+    "stream_duplicate_samples": 0,
+    "missing_moov": false,
+    "used_reference": false
+  },
+  "payload_bytes_copied": 9473,
+  "wrote_output": true
+}

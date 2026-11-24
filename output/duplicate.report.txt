@@ -1,0 +1,9 @@
+文件: /home/hj/userfeedback/uid4-0004/samples/cases/duplicate.mp4 (14722 字节)
+输出: /home/hj/userfeedback/uid4-0004/output/duplicate.repaired.mp4
+扫描到完整 sample: 30，重建索引 sample: 30，关键帧: 2 个 [1 16]
+诊断: 重复偏移记录 4 条；重复 sample 记录 4 条
+可播放区间:
+  #1 sample 1-30 (关键帧起 #1, 前导非关键帧 0), 时间 0.000-2.000s, 源字节 40-13573, keys=[1 16]
+未恢复部分:
+  (无)
+修复完成，媒体载荷原样复制 13533 字节；原文件未被修改。

@@ -1,0 +1,6 @@
+/mp4repair
+/output/mp4repair
+/output/mkfixtures
+*.tmp
+*.tmp-*
+.base-one-per-chunk.mp4
